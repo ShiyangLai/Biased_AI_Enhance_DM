@@ -169,34 +169,3 @@ A successful run reproduces, among others:
 `MCMCglmm` models are stochastic. Seeds are set where the original analysis set
 them, but posterior means on the latent scale still move by roughly 0.07–0.18
 between runs; the ordinal coefficients will not reproduce to three decimals.
-
-## Notes and known limitations
-
-- Scripts share a global environment and must run in the order given in
-  `run_all.R`; several add columns that later scripts read.
-- Six scripts from the working folder are deliberately not included:
-  `third_figure_c2.R` through `c5.R`, `discussion_2.R` and `SM_dual_analysis.R`.
-  All six are frozen at a superseded specification — they have had no
-  substantive edit since an earlier release, while `third_figure_c1.R` was
-  rewritten around them (its treatment filter and interaction term both
-  changed). Two of them no longer ran at all as a result, and
-  `SM_dual_analysis.R` still selected `AI_Combo_Numeric`, a column produced only
-  by a retired Python preprocessing step.
-- `discussion_1.R` reconstructed a design matrix by hand from a shorter formula
-  than the model was fitted with, so the matrix product against the posterior
-  failed. Covariates absent from the
-  reference grid are now held at reference values — first factor level, covariate
-  mean — as in `second_figure_b1.R`; they are common to every arm and cancel in
-  the between-arm contrasts. It now asserts that design matrix and posterior
-  agree column for column.
-- `forth_figure_d2.R` and `five_arm_analysis_standalone.R` filtered complete
-  cases on `AICorrectness` alone, while `MCMCglmm` errors on an NA in any fixed
-  predictor; both now filter on the full predictor set. This drops rows with a
-  missing political-ideology response (7 single-assistant, 12 in the five-arm
-  frame), so their ordinal estimates shift slightly against earlier runs.
-- `five_arm_analysis_standalone.R` also read its input with `readr::read_csv`;
-  `MCMCglmm` indexes its response with base `data.frame` semantics and a tibble
-  returns a one-column tibble rather than a vector. It now coerces on read.
-- `forth_figure_d4.R` had a reporting block referencing an `Effect_Size` column
-  that was never constructed; it is now derived from Hedges' *g* using
-  conventional cut-offs. No estimate or test is affected.
