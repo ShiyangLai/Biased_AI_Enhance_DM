@@ -169,6 +169,10 @@ pi_clm <- clm(PerceivedImproveCode ~ ExperimentType + as.factor(NID) + PrePerfor
 print(coeftest(pi_clm, vcov = vcovCL(pi_clm, cluster = dat_pi$UID)))
 
 ## Bayesian ordinal model (MCMCglmm) for marginal means on the latent scale
+# Seed immediately before the chain: the set.seed() at the top of the script is
+# consumed by Part A, so the RNG state here would otherwise depend on what ran
+# before it.
+set.seed(123)
 pi_mcmc <- MCMCglmm(PerceivedImproveCode ~ ExperimentType + as.factor(NID) +
                       PrePerformance + UIdeo + AICorrectness + as.factor(UStanceLabel),
                     random = ~ UID, family = "ordinal",
