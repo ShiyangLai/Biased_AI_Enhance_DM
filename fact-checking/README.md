@@ -115,11 +115,11 @@ latter carry platform identifiers. Both are available from the authors.
 
 **Willingness to recommend**
 
-`discussion_1.R` — ordinal model of whether participants would recommend the assistant, by bias magnitude. Runs before the c-series, which reads the recoded outcome it adds.
+`discussion_1.R` — ordinal model of whether participants would recommend the assistant, by bias magnitude.
 
 **Participant–assistant stance relationship** (echo chamber vs. opposition)
 
-`third_figure_c1.R` (`relative_bias_misinfo.png`), `third_figure_c2.R`, `third_figure_c3.R`, `third_figure_c4.R`, `third_figure_c5.R`
+`third_figure_c1.R` → `relative_bias_misinfo.png`. Models performance as `BiasSide * UStanceLabel_S`, giving the four echo-chamber/opposition cells crossed with the participant's own party.
 
 **Dual assistants**
 
@@ -130,8 +130,6 @@ latter carry platform identifiers. Both are available from the authors.
 | `forth_figure_d3.R` | Supporting comparisons |
 | `forth_figure_d4.R` | `conversation_length.png` |
 | `dual_ai_decomposition_v2.R` | `dual_ai_decomposition_v2.png` — six-cell persuasion / backfire / advisor-selection decomposition |
-| `discussion_2.R` | Conversation rounds, biased vs. non-biased |
-| `SM_dual_analysis.R` | Dual-assistant supplementary material |
 | `export_five_arm_data.R` | Writes `../data/five_arm_single_dual.csv` (3,303 rows), the analysis frame for the five-arm comparison |
 
 **Engagement**
@@ -175,32 +173,22 @@ between runs; the ordinal coefficients will not reproduce to three decimals.
 ## Notes and known limitations
 
 - Scripts share a global environment and must run in the order given in
-  `run_all.R`. The order matters in two non-obvious places: `discussion_1.R`
-  precedes the c-series because it adds a column they read, and `discussion_2.R`
-  and `SM_dual_analysis.R` precede `engagement_coef_heatmap.R`, which rebuilds
-  `combined_data` for its own use.
-- Several scripts reconstructed a design matrix by hand from a shorter formula
+  `run_all.R`; several add columns that later scripts read.
+- Six scripts from the working folder are deliberately not included:
+  `third_figure_c2.R` through `c5.R`, `discussion_2.R` and `SM_dual_analysis.R`.
+  All six are frozen at a superseded specification — they have had no
+  substantive edit since an earlier release, while `third_figure_c1.R` was
+  rewritten around them (its treatment filter and interaction term both
+  changed). Two of them no longer ran at all as a result, and
+  `SM_dual_analysis.R` still selected `AI_Combo_Numeric`, a column produced only
+  by a retired Python preprocessing step.
+- `discussion_1.R` reconstructed a design matrix by hand from a shorter formula
   than the model was fitted with, so the matrix product against the posterior
-  failed (`discussion_1.R`, `third_figure_c2.R`). Covariates absent from the
+  failed. Covariates absent from the
   reference grid are now held at reference values — first factor level, covariate
   mean — as in `second_figure_b1.R`; they are common to every arm and cancel in
-  the between-arm contrasts. Both now assert that design matrix and posterior
+  the between-arm contrasts. It now asserts that design matrix and posterior
   agree column for column.
-- `third_figure_c2.R` also hard-coded `BiasSide` levels as
-  `c("Opposite", "Same")` while the fitted model used the opposite order, which
-  would have reversed the sign of the contrast; the level order is now inherited
-  from the fitted data. `third_figure_c3.R` selected its `BiasSide` coefficient
-  by an exact term name that the fit never produced, leaving an empty frame; it
-  now matches on prefix.
-- `third_figure_c3.R` fitted `PostPerformance ~ BiasedType2` (three levels) but
-  contrasted the four `AIStanceLabel_S` levels; the model now uses the factor its
-  contrast refers to.
-- `discussion_2.R` inherited `BiasedType` from whichever script ran last — the
-  c-series leaves it with three levels, and `cohens_d()` needs two. It now
-  defines the binary version locally.
-- `SM_dual_analysis.R` selected `AI_Combo_Numeric` and `BiasedType`, neither of
-  which the R preprocessing produces (`AI_Combo_Numeric` came from an earlier
-  Python pipeline); both were unused downstream and are dropped.
 - `forth_figure_d2.R` and `five_arm_analysis_standalone.R` filtered complete
   cases on `AICorrectness` alone, while `MCMCglmm` errors on an NA in any fixed
   predictor; both now filter on the full predictor set. This drops rows with a

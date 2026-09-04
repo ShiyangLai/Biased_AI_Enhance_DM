@@ -26,16 +26,10 @@ ORDER <- c(
   "second_figure_b2.R",                   # assistant's own fact-checking accuracy
 
   # --- willingness to recommend ---------------------------------------------
-  # Runs before the c-series: it adds WillRecommendAI_Numeric to
-  # single_ai_processed_, which third_figure_c2.R reads via repdem_single_ai.
   "discussion_1.R",
 
   # --- participant-assistant stance relationship -----------------------------
   "third_figure_c1.R",
-  "third_figure_c2.R",
-  "third_figure_c3.R",
-  "third_figure_c4.R",
-  "third_figure_c5.R",
 
   # --- dual assistants -------------------------------------------------------
   "forth_figure_d1.R",                    # performance, single vs dual arms
@@ -44,12 +38,6 @@ ORDER <- c(
   "forth_figure_d3.R",
   "forth_figure_d4.R",                    # conversation length
   "dual_ai_decomposition_v2.R",           # six-cell persuasion decomposition
-
-  # --- supplementary ---------------------------------------------------------
-  # Both read objects the engagement heatmap below overwrites (it builds its own
-  # combined_data), so they run first.
-  "discussion_2.R",                       # conversation rounds
-  "SM_dual_analysis.R",                   # dual-AI supplementary material
 
   # --- engagement ------------------------------------------------------------
   "engagement_coef_heatmap.R",            # 7 arms x 5 engagement dimensions
