@@ -1,0 +1,1043 @@
+participantId,ai_group,wave,session_id,n_followup_turns,followup_words,length_per_round,status,behavioral,cognitive,emotional,autonomy,social_presence,overall,overall_label
+2,Somewhat Risk-Seeking,wave2,12,1,13,13.0,ok,1,1,1,2.0,0,1.0,Low
+3,Extremely Risk-Seeking,wave2,12,2,53,26.5,ok,2,3,2,2.0,1,2.0,Moderate
+7,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+8,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+9,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+13,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+16,Somewhat Risk-Seeking,wave2,12,1,9,9.0,ok,1,1,1,2.0,1,1.2,Low
+18,Risk-Neutral,wave3,15,1,68,68.0,ok,2,2,3,2.0,2,2.2,Moderate
+19,Extremely Risk-Seeking,wave3,15,1,17,17.0,ok,2,2,2,2.0,0,1.6,Moderate
+20,Extremely Risk-Seeking,wave2,12,1,10,10.0,ok,1,2,2,1.0,0,1.2,Low
+23,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+24,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+25,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+27,Risk-Neutral,wave1,7,4,39,9.75,ok,3,1,3,2.0,2,2.2,Moderate
+29,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+35,Extremely Risk-Seeking,wave3,15,4,170,42.5,ok,3,3,2,3.0,1,2.4,Moderate
+36,Extremely Risk-Averse,wave2,12,2,14,7.0,ok,1,1,3,1.0,2,1.6,Moderate
+38,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+40,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+43,Risk-Neutral,wave2,12,3,28,9.333333333333334,ok,3,2,1,3.0,1,2.0,Moderate
+46,Extremely Risk-Averse,wave1,5,2,39,19.5,ok,3,3,2,2.0,1,2.2,Moderate
+49,Somewhat Risk-Seeking,wave1,5,1,20,20.0,ok,2,2,1,3.0,1,1.8,Moderate
+53,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+58,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+60,Risk-Neutral,wave2,12,2,22,11.0,ok,2,2,1,3.0,1,1.8,Moderate
+62,Somewhat Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+63,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+65,Extremely Risk-Seeking,wave2,12,2,28,14.0,ok,3,3,2,1.0,1,2.0,Moderate
+67,Somewhat Risk-Averse,wave3,15,2,32,16.0,ok,3,2,2,2.0,0,1.8,Moderate
+68,Somewhat Risk-Seeking,wave1,5,2,11,5.5,ok,1,1,1,1.0,1,1.0,Low
+69,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+70,Somewhat Risk-Averse,wave3,15,1,12,12.0,ok,1,2,2,2.0,0,1.4,Moderate
+75,Extremely Risk-Seeking,wave3,15,2,25,12.5,ok,2,2,2,2.0,1,1.8,Moderate
+78,Somewhat Risk-Averse,wave2,12,1,29,29.0,ok,2,2,2,2.0,1,1.8,Moderate
+79,Default,wave1,7,1,16,16.0,ok,2,2,2,2.0,0,1.6,Moderate
+80,Extremely Risk-Seeking,wave2,12,2,44,22.0,ok,3,3,2,2.0,1,2.2,Moderate
+87,Extremely Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+89,Extremely Risk-Seeking,wave3,15,1,16,16.0,ok,1,1,2,3.0,0,1.4,Moderate
+90,Extremely Risk-Averse,wave2,12,2,33,16.5,ok,3,3,2,2.0,1,2.2,Moderate
+93,Extremely Risk-Averse,wave3,15,1,10,10.0,ok,0,1,2,1.0,0,0.8,Low
+97,Risk-Neutral,wave2,12,1,19,19.0,ok,2,3,2,2.0,1,2.0,Moderate
+98,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+101,Somewhat Risk-Averse,wave1,7,2,90,45.0,ok,3,3,2,3.0,1,2.4,Moderate
+103,Somewhat Risk-Seeking,wave3,15,3,20,6.666666666666667,ok,2,1,3,1.0,2,1.8,Moderate
+104,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+105,Risk-Neutral,wave1,7,1,26,26.0,ok,2,2,1,3.0,1,1.8,Moderate
+106,Risk-Neutral,wave3,15,2,31,15.5,ok,3,3,2,2.0,1,2.2,Moderate
+107,Extremely Risk-Averse,wave2,12,1,7,7.0,ok,0,1,1,1.0,0,0.6,Low
+116,Risk-Neutral,wave2,12,1,9,9.0,ok,1,2,1,0.0,0,0.8,Low
+117,Risk-Neutral,wave2,12,1,3,3.0,ok,0,0,1,2.0,0,0.6,Low
+120,Default,wave3,15,2,30,15.0,ok,3,2,2,2.0,1,2.0,Moderate
+121,Risk-Neutral,wave3,15,2,31,15.5,ok,3,2,1,1.0,0,1.4,Low
+122,Extremely Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+125,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+126,Extremely Risk-Averse,wave2,12,1,10,10.0,ok,1,1,1,2.0,0,1.0,Low
+127,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+128,Default,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+129,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+130,Somewhat Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+131,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+132,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+133,Risk-Neutral,wave1,7,2,13,6.5,ok,2,1,1,2.0,0,1.2,Low
+135,Extremely Risk-Averse,wave2,12,1,16,16.0,ok,2,2,2,2.0,1,1.8,Moderate
+138,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+139,Extremely Risk-Seeking,wave1,7,2,18,9.0,ok,2,1,1,1.0,0,1.0,Low
+140,Somewhat Risk-Seeking,wave1,7,1,8,8.0,ok,2,1,2,2.0,0,1.4,Moderate
+141,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+145,Extremely Risk-Averse,wave1,5,1,6,6.0,ok,1,1,1,1.0,0,0.8,Low
+147,Extremely Risk-Averse,wave2,12,1,5,5.0,ok,1,1,1,1.0,0,0.8,Low
+148,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+151,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+153,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+155,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+157,Risk-Neutral,wave2,12,2,105,52.5,ok,3,3,3,3.0,2,2.8,High
+161,Default,wave2,12,3,151,50.333333333333336,ok,3,3,3,3.0,3,3.0,High
+162,Default,wave2,12,2,40,20.0,ok,3,3,2,3.0,1,2.4,Moderate
+165,Risk-Neutral,wave3,15,2,25,12.5,ok,2,2,2,3.0,1,2.0,Moderate
+168,Somewhat Risk-Seeking,wave1,7,1,7,7.0,ok,1,2,2,2.0,1,1.6,Moderate
+170,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+172,Risk-Neutral,wave3,15,1,6,6.0,ok,1,1,1,2.0,0,1.0,Low
+174,Somewhat Risk-Seeking,wave3,15,1,15,15.0,ok,2,2,1,1.0,1,1.4,Low
+175,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+176,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+179,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+180,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+185,Somewhat Risk-Averse,wave3,15,3,98,32.666666666666664,ok,3,3,2,3.0,3,2.8,High
+188,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+189,Risk-Neutral,wave2,12,3,24,8.0,ok,3,2,3,2.0,2,2.4,Moderate
+191,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+195,Risk-Neutral,wave1,7,1,4,4.0,ok,1,0,0,2.0,0,0.6,Low
+197,Somewhat Risk-Averse,wave2,12,2,19,9.5,ok,2,2,1,3.0,0,1.6,Moderate
+204,Somewhat Risk-Seeking,wave2,12,4,56,14.0,ok,3,2,2,2.0,1,2.0,Moderate
+205,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+206,Extremely Risk-Seeking,wave1,7,1,13,13.0,ok,1,1,1,1.0,1,1.0,Low
+210,Extremely Risk-Seeking,wave2,12,1,7,7.0,ok,1,2,2,3.0,0,1.6,Moderate
+212,Somewhat Risk-Averse,wave3,15,1,9,9.0,ok,1,1,2,0.0,0,0.8,Low
+213,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+214,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+215,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+218,Default,wave2,12,2,64,32.0,ok,3,3,2,3.0,1,2.4,Moderate
+220,Somewhat Risk-Seeking,wave2,12,1,12,12.0,ok,1,1,1,1.0,0,0.8,Low
+223,Extremely Risk-Averse,wave2,12,1,19,19.0,ok,2,2,1,3.0,0,1.6,Moderate
+224,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+225,Risk-Neutral,wave1,1,1,5,5.0,ok,0,1,1,2.0,0,0.8,Low
+232,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+236,Risk-Neutral,wave2,12,3,56,18.666666666666668,ok,3,3,2,3.0,1,2.4,High
+238,Extremely Risk-Seeking,wave1,7,2,149,74.5,ok,3,3,2,3.0,1,2.4,Moderate
+240,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+243,Default,wave1,7,1,9,9.0,ok,1,1,2,0.0,0,0.8,Low
+244,Somewhat Risk-Averse,wave2,12,1,7,7.0,ok,1,1,1,1.0,0,0.8,Low
+246,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+247,Somewhat Risk-Averse,wave2,12,1,12,12.0,ok,2,3,2,3.0,1,2.2,High
+248,Extremely Risk-Seeking,wave2,12,2,15,7.5,ok,2,2,1,2.0,0,1.4,Moderate
+249,Somewhat Risk-Averse,wave3,15,3,80,26.666666666666668,ok,3,3,3,2.0,2,2.6,High
+250,Extremely Risk-Averse,wave2,12,2,18,9.0,ok,2,2,1,3.0,0,1.6,Moderate
+264,Somewhat Risk-Seeking,wave1,7,1,18,18.0,ok,2,2,2,3.0,1,2.0,Moderate
+265,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+266,Risk-Neutral,wave3,15,4,14,3.5,ok,1,0,2,0.0,2,1.0,Low
+268,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+269,Extremely Risk-Seeking,wave1,7,3,33,11.0,ok,3,2,2,2.0,1,2.0,Moderate
+273,Risk-Neutral,wave2,12,1,9,9.0,ok,1,1,1,1.0,0,0.8,Low
+275,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+278,Risk-Neutral,wave1,7,3,40,13.333333333333334,ok,3,2,2,2.0,1,2.0,Moderate
+279,Default,wave2,12,2,20,10.0,ok,3,2,2,2.0,1,2.0,Moderate
+280,Somewhat Risk-Averse,wave2,12,2,17,8.5,ok,3,2,2,2.0,1,2.0,Moderate
+281,Somewhat Risk-Averse,wave2,12,1,26,26.0,ok,2,2,2,3.0,1,2.0,Moderate
+282,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+289,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+293,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+295,Somewhat Risk-Seeking,wave2,12,2,38,19.0,ok,3,3,2,3.0,1,2.4,Moderate
+299,Risk-Neutral,wave3,15,3,24,8.0,ok,3,2,3,1.0,2,2.2,Moderate
+300,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+301,Extremely Risk-Averse,wave3,15,1,12,12.0,ok,1,1,2,3.0,2,1.8,Moderate
+306,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+307,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+310,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+311,Risk-Neutral,wave1,7,1,10,10.0,ok,1,2,1,2.0,1,1.4,Low
+312,Default,wave3,15,1,11,11.0,ok,1,2,1,2.0,0,1.2,Low
+314,Risk-Neutral,wave1,7,1,15,15.0,ok,1,2,1,3.0,0,1.4,Moderate
+315,Default,wave2,12,1,12,12.0,ok,1,2,1,1.0,0,1.0,Low
+316,Somewhat Risk-Averse,wave1,7,1,12,12.0,ok,1,1,1,2.0,0,1.0,Low
+317,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+321,Somewhat Risk-Averse,wave3,15,2,25,12.5,ok,2,3,2,2.0,1,2.0,Moderate
+324,Somewhat Risk-Seeking,wave1,7,1,5,5.0,ok,0,2,2,3.0,0,1.4,Moderate
+325,Somewhat Risk-Averse,wave2,12,4,52,13.0,ok,3,3,2,3.0,1,2.4,Moderate
+327,Somewhat Risk-Seeking,wave1,7,3,41,13.666666666666666,ok,3,3,2,3.0,1,2.4,High
+329,Somewhat Risk-Seeking,wave1,5,2,17,8.5,ok,1,2,1,1.0,0,1.0,Low
+331,Somewhat Risk-Averse,wave2,12,1,2,2.0,ok,1,0,3,0.0,1,1.0,Low
+334,Extremely Risk-Averse,wave2,12,1,9,9.0,ok,1,2,1,2.0,1,1.4,Low
+335,Extremely Risk-Averse,wave2,12,2,27,13.5,ok,2,2,2,2.0,1,1.8,Moderate
+342,Somewhat Risk-Averse,wave1,7,1,15,15.0,ok,2,2,1,3.0,0,1.6,Moderate
+343,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+345,Extremely Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+349,Extremely Risk-Averse,wave1,7,1,4,4.0,ok,1,1,1,1.0,0,0.8,Low
+350,Default,wave2,12,1,10,10.0,ok,1,1,1,1.0,0,0.8,Low
+352,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+353,Default,wave1,7,3,102,34.0,ok,3,3,2,2.0,1,2.2,Moderate
+355,Default,wave2,12,1,4,4.0,ok,1,1,1,0.0,0,0.6,Low
+356,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+357,Extremely Risk-Seeking,wave2,12,3,42,14.0,ok,3,2,2,3.0,0,2.0,Moderate
+358,Extremely Risk-Seeking,wave1,7,1,13,13.0,ok,1,1,1,1.0,0,0.8,Low
+360,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+364,Extremely Risk-Averse,wave2,12,1,19,19.0,ok,1,1,1,1.0,0,0.8,Low
+367,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+372,Default,wave3,15,1,30,30.0,ok,2,1,0,3.0,1,1.4,Low
+376,Extremely Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+380,Default,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+385,Somewhat Risk-Averse,wave3,15,1,17,17.0,ok,2,1,1,1.0,0,1.0,Low
+386,Default,wave1,7,2,28,14.0,ok,3,3,2,1.0,1,2.0,Moderate
+388,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+391,Somewhat Risk-Seeking,wave1,5,4,124,31.0,ok,3,3,2,2.0,1,2.2,High
+392,Somewhat Risk-Seeking,wave2,12,1,9,9.0,ok,1,1,1,1.0,0,0.8,Low
+393,Risk-Neutral,wave3,15,1,6,6.0,ok,1,1,1,0.0,0,0.6,Low
+394,Risk-Neutral,wave3,15,1,11,11.0,ok,1,1,1,1.0,0,0.8,Low
+395,Somewhat Risk-Averse,wave2,12,1,7,7.0,ok,1,1,1,1.0,0,0.8,Low
+396,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+397,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+398,Extremely Risk-Averse,wave2,12,1,3,3.0,ok,0,0,0,0.0,0,0.0,Very Low
+399,Risk-Neutral,wave2,12,2,14,7.0,ok,2,1,2,1.0,1,1.4,Moderate
+403,Risk-Neutral,wave2,12,1,2,2.0,ok,0,1,1,1.0,0,0.6,Low
+407,Risk-Neutral,wave3,15,1,4,4.0,ok,1,1,1,0.0,1,0.8,Low
+411,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+415,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+416,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+421,Risk-Neutral,wave1,5,1,7,7.0,ok,1,1,1,1.0,0,0.8,Low
+422,Risk-Neutral,wave3,15,2,41,20.5,ok,3,3,2,3.0,1,2.4,High
+424,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+426,Extremely Risk-Seeking,wave2,12,1,4,4.0,ok,0,2,2,2.0,0,1.2,Low
+431,Risk-Neutral,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+432,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+435,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+436,Somewhat Risk-Seeking,wave3,15,1,15,15.0,ok,1,2,2,2.0,0,1.4,Moderate
+437,Default,wave2,12,1,15,15.0,ok,2,2,1,3.0,0,1.6,Moderate
+438,Risk-Neutral,wave3,15,4,129,32.25,ok,3,3,2,3.0,1,2.4,Moderate
+439,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+441,Somewhat Risk-Averse,wave3,15,1,10,10.0,ok,1,1,1,1.0,0,0.8,Low
+445,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+448,Extremely Risk-Seeking,wave1,7,3,30,10.0,ok,2,2,1,0.0,1,1.2,Low
+452,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+453,Default,wave1,7,1,13,13.0,ok,1,2,3,2.0,1,1.8,Moderate
+454,Risk-Neutral,wave3,15,1,3,3.0,ok,0,1,1,1.0,0,0.6,Low
+457,Extremely Risk-Averse,wave2,12,3,26,8.666666666666666,ok,3,1,2,1.0,1,1.6,Moderate
+461,Default,wave1,7,1,26,26.0,ok,2,2,1,3.0,1,1.8,Moderate
+464,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+465,Risk-Neutral,wave1,5,1,13,13.0,ok,1,1,1,1.0,0,0.8,Low
+466,Somewhat Risk-Averse,wave3,15,1,5,5.0,ok,1,1,1,2.0,0,1.0,Low
+469,Extremely Risk-Averse,wave3,15,1,9,9.0,ok,1,1,1,0.0,0,0.6,Low
+471,Somewhat Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+474,Risk-Neutral,wave3,15,1,10,10.0,ok,1,1,1,1.0,0,0.8,Low
+476,Default,wave3,15,1,12,12.0,ok,1,2,1,2.0,0,1.2,Low
+477,Somewhat Risk-Averse,wave2,12,1,14,14.0,ok,2,2,1,2.0,0,1.4,Moderate
+479,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+483,Risk-Neutral,wave3,15,1,2,2.0,ok,1,0,2,0.0,2,1.0,Low
+484,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+490,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+495,Extremely Risk-Averse,wave2,12,4,69,17.25,ok,3,3,2,3.0,1,2.4,High
+497,Default,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+498,Extremely Risk-Seeking,wave1,7,1,11,11.0,ok,1,1,2,1.0,1,1.2,Low
+502,Default,wave3,15,2,19,9.5,ok,2,2,2,2.0,1,1.8,Moderate
+505,Extremely Risk-Seeking,wave2,12,1,32,32.0,ok,2,3,2,2.0,1,2.0,Moderate
+506,Extremely Risk-Seeking,wave3,15,1,6,6.0,ok,1,1,2,1.0,1,1.2,Low
+509,Extremely Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+513,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+514,Extremely Risk-Seeking,wave3,15,1,8,8.0,ok,1,1,1,0.0,0,0.6,Low
+516,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+519,Somewhat Risk-Seeking,wave1,7,3,25,8.333333333333334,ok,3,2,1,2.0,1,1.8,Moderate
+522,Extremely Risk-Averse,wave3,15,2,38,19.0,ok,3,3,2,1.0,1,2.0,Moderate
+524,Somewhat Risk-Averse,wave1,7,1,5,5.0,ok,1,0,1,0.0,0,0.4,Very Low
+531,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+533,Extremely Risk-Seeking,wave3,15,2,36,18.0,ok,3,3,3,2.0,2,2.6,High
+535,Extremely Risk-Averse,wave3,15,1,9,9.0,ok,1,1,1,1.0,0,0.8,Low
+538,Extremely Risk-Seeking,wave2,12,2,8,4.0,ok,2,1,1,1.0,0,1.0,Low
+539,Extremely Risk-Seeking,wave1,7,1,5,5.0,ok,1,1,1,1.0,0,0.8,Low
+541,Risk-Neutral,wave1,5,1,9,9.0,ok,1,1,2,1.0,0,1.0,Low
+543,Default,wave3,15,1,23,23.0,ok,2,2,2,1.0,1,1.6,Moderate
+545,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+547,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+548,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+549,Somewhat Risk-Averse,wave3,15,4,163,40.75,ok,3,3,3,3.0,2,2.8,High
+552,Extremely Risk-Seeking,wave1,7,4,51,12.75,ok,3,3,3,2.0,2,2.6,High
+554,Extremely Risk-Averse,wave3,15,1,12,12.0,ok,2,2,1,2.0,0,1.4,Moderate
+555,Default,wave1,7,1,4,4.0,ok,0,1,1,1.0,0,0.6,Low
+556,Somewhat Risk-Seeking,wave1,5,1,12,12.0,ok,1,1,1,1.0,0,0.8,Low
+557,Extremely Risk-Averse,wave1,7,2,20,10.0,ok,2,2,2,1.0,1,1.6,Moderate
+559,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+560,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+561,Extremely Risk-Averse,wave2,12,1,9,9.0,ok,1,2,1,1.0,1,1.2,Low
+568,Default,wave1,7,2,23,11.5,ok,2,1,1,1.0,0,1.0,Low
+570,Extremely Risk-Averse,wave2,12,3,36,12.0,ok,3,3,2,2.0,1,2.2,Moderate
+573,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+575,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+576,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+578,Default,wave2,12,2,8,4.0,ok,1,1,3,1.0,2,1.6,Low
+579,Default,wave1,7,2,25,12.5,ok,2,2,2,1.0,2,1.8,Moderate
+581,Risk-Neutral,wave3,15,1,15,15.0,ok,2,2,1,2.0,0,1.4,Moderate
+583,Extremely Risk-Seeking,wave1,7,2,19,9.5,ok,2,1,2,2.0,0,1.4,Moderate
+585,Risk-Neutral,wave2,12,4,103,25.75,ok,3,3,2,3.0,1,2.4,Moderate
+589,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+591,Extremely Risk-Averse,wave1,5,2,27,13.5,ok,2,2,1,3.0,0,1.6,Moderate
+592,Somewhat Risk-Seeking,wave3,15,2,15,7.5,ok,1,2,3,1.0,2,1.8,Moderate
+596,Risk-Neutral,wave3,15,2,33,16.5,ok,3,2,2,2.0,1,2.0,Moderate
+599,Somewhat Risk-Averse,wave2,12,1,13,13.0,ok,1,2,2,1.0,1,1.4,Low
+600,Default,wave3,15,3,64,21.333333333333332,ok,3,3,2,3.0,1,2.4,Moderate
+602,Extremely Risk-Averse,wave3,15,1,23,23.0,ok,2,2,1,1.0,0,1.2,Moderate
+603,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+605,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+606,Somewhat Risk-Averse,wave3,15,1,2,2.0,ok,1,0,1,0.0,2,0.8,Very Low
+607,Extremely Risk-Averse,wave3,15,1,9,9.0,ok,1,1,1,1.0,0,0.8,Low
+613,Somewhat Risk-Seeking,wave2,12,1,11,11.0,ok,1,1,1,0.0,1,0.8,Low
+618,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+624,Default,wave3,15,4,47,11.75,ok,3,3,2,3.0,2,2.6,High
+626,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+627,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+628,Somewhat Risk-Seeking,wave1,7,2,17,8.5,ok,2,1,1,2.0,1,1.4,Moderate
+629,Extremely Risk-Seeking,wave1,7,1,3,3.0,ok,1,0,1,2.0,0,0.8,Low
+633,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+636,Somewhat Risk-Seeking,wave2,12,1,6,6.0,ok,1,1,1,1.0,0,0.8,Low
+639,Somewhat Risk-Averse,wave2,12,1,5,5.0,ok,1,1,1,1.0,0,0.8,Low
+640,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+642,Extremely Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+643,Somewhat Risk-Averse,wave3,15,1,51,51.0,ok,2,2,1,0.0,0,1.0,Low
+644,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+645,Default,wave2,12,1,9,9.0,ok,1,1,1,1.0,0,0.8,Low
+648,Somewhat Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+651,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+657,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+659,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+662,Somewhat Risk-Seeking,wave2,12,2,74,37.0,ok,3,2,1,3.0,1,2.0,Moderate
+663,Somewhat Risk-Seeking,wave3,15,1,13,13.0,ok,1,2,1,1.0,1,1.2,Low
+664,Somewhat Risk-Averse,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+665,Extremely Risk-Seeking,wave3,15,3,16,5.333333333333333,ok,2,1,2,2.0,1,1.6,Moderate
+668,Extremely Risk-Averse,wave1,7,3,49,16.333333333333332,ok,3,3,1,1.0,0,1.6,Moderate
+671,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+673,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+684,Extremely Risk-Seeking,wave1,7,1,14,14.0,ok,1,2,2,2.0,1,1.6,Moderate
+689,Default,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+690,Extremely Risk-Averse,wave3,15,1,18,18.0,ok,2,2,2,2.0,1,1.8,Moderate
+692,Risk-Neutral,wave2,12,1,8,8.0,ok,1,1,1,3.0,0,1.2,Low
+694,Extremely Risk-Seeking,wave2,12,1,24,24.0,ok,2,2,1,2.0,1,1.6,Moderate
+696,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+697,Default,wave1,5,1,15,15.0,ok,2,2,1,3.0,0,1.6,Moderate
+699,Risk-Neutral,wave1,1,0,0,,no_followup,0,0,0,,0,0.0,
+703,Somewhat Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+704,Somewhat Risk-Seeking,wave2,12,1,7,7.0,ok,1,1,1,1.0,0,0.8,Low
+705,Default,wave1,7,2,23,11.5,ok,2,2,2,2.0,0,1.6,Moderate
+709,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+715,Extremely Risk-Averse,wave1,5,1,13,13.0,ok,1,2,1,2.0,0,1.2,Moderate
+716,Extremely Risk-Seeking,wave3,15,1,17,17.0,ok,2,2,1,2.0,0,1.4,Moderate
+717,Extremely Risk-Seeking,wave1,7,1,12,12.0,ok,1,1,1,1.0,0,0.8,Low
+719,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+720,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+721,Risk-Neutral,wave2,12,1,9,9.0,ok,1,1,1,1.0,0,0.8,Low
+724,Default,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+725,Somewhat Risk-Seeking,wave1,7,1,6,6.0,ok,1,1,2,2.0,0,1.2,Low
+728,Extremely Risk-Averse,wave1,7,1,9,9.0,ok,1,1,1,1.0,0,0.8,Low
+729,Extremely Risk-Averse,wave1,7,1,18,18.0,ok,2,1,2,2.0,1,1.6,Moderate
+730,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+732,Somewhat Risk-Averse,wave2,12,1,15,15.0,ok,2,2,1,2.0,0,1.4,Moderate
+735,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+736,Extremely Risk-Seeking,wave1,7,3,48,16.0,ok,3,3,2,2.0,1,2.2,Moderate
+737,Extremely Risk-Seeking,wave3,15,3,14,4.666666666666667,ok,3,1,2,1.0,0,1.4,Low
+738,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+740,Extremely Risk-Seeking,wave1,7,2,24,12.0,ok,2,2,2,3.0,1,2.0,Moderate
+741,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+742,Somewhat Risk-Seeking,wave3,15,2,30,15.0,ok,3,2,1,2.0,0,1.6,Moderate
+743,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+744,Default,wave1,7,2,40,20.0,ok,3,2,2,1.0,1,1.8,Moderate
+746,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+759,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+763,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+764,Somewhat Risk-Averse,wave3,15,4,117,29.25,ok,3,3,3,3.0,2,2.8,High
+767,Risk-Neutral,wave1,1,0,0,,no_followup,0,0,0,,0,0.0,
+773,Extremely Risk-Averse,wave2,12,1,17,17.0,ok,2,1,1,1.0,1,1.2,Low
+778,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+779,Extremely Risk-Averse,wave2,12,4,38,9.5,ok,3,2,3,3.0,2,2.6,High
+781,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+782,Somewhat Risk-Averse,wave1,7,1,17,17.0,ok,2,2,2,2.0,1,1.8,Moderate
+785,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+789,Extremely Risk-Averse,wave3,15,1,12,12.0,ok,1,1,2,1.0,0,1.0,Low
+791,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+792,Somewhat Risk-Seeking,wave1,1,1,8,8.0,ok,1,1,1,3.0,0,1.2,Moderate
+793,Extremely Risk-Seeking,wave2,12,1,14,14.0,ok,1,2,2,2.0,0,1.4,Moderate
+794,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+797,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+800,Somewhat Risk-Seeking,wave3,15,1,8,8.0,ok,1,1,1,1.0,0,0.8,Low
+802,Extremely Risk-Seeking,wave2,12,1,18,18.0,ok,2,2,2,1.0,1,1.6,Moderate
+803,Default,wave2,12,1,6,6.0,ok,1,1,1,1.0,0,0.8,Low
+804,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+805,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+807,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+811,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+812,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+813,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+814,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+815,Extremely Risk-Seeking,wave1,7,1,13,13.0,ok,1,1,1,1.0,0,0.8,Low
+817,Extremely Risk-Seeking,wave3,15,4,305,76.25,ok,3,3,2,3.0,3,2.8,High
+818,Extremely Risk-Averse,wave3,15,1,9,9.0,ok,1,1,1,1.0,0,0.8,Low
+820,Default,wave3,15,1,7,7.0,ok,1,1,1,1.0,0,0.8,Low
+826,Extremely Risk-Seeking,wave2,12,1,13,13.0,ok,1,1,1,1.0,1,1.0,Low
+830,Default,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+833,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+835,Extremely Risk-Averse,wave1,7,4,33,8.25,ok,3,2,2,3.0,1,2.2,Moderate
+841,Risk-Neutral,wave3,15,1,17,17.0,ok,2,2,2,2.0,1,1.8,Moderate
+846,Somewhat Risk-Seeking,wave2,12,1,16,16.0,ok,2,2,2,1.0,1,1.6,Moderate
+847,Extremely Risk-Averse,wave2,12,1,7,7.0,ok,0,2,1,2.0,0,1.0,Low
+854,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+855,Extremely Risk-Seeking,wave3,15,4,49,12.25,ok,3,2,2,2.0,1,2.0,Moderate
+856,Extremely Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+860,Default,wave3,15,2,26,13.0,ok,3,3,2,2.0,1,2.2,Moderate
+861,Extremely Risk-Averse,wave2,12,1,9,9.0,ok,1,1,3,2.0,2,1.8,Moderate
+863,Extremely Risk-Seeking,wave1,7,4,66,16.5,ok,3,3,2,3.0,2,2.6,High
+866,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+867,Somewhat Risk-Seeking,wave3,15,2,33,16.5,ok,3,2,2,1.0,1,1.8,Moderate
+870,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+871,Somewhat Risk-Averse,wave2,12,1,4,4.0,ok,1,0,3,0.0,2,1.2,Low
+874,Extremely Risk-Seeking,wave1,5,2,49,24.5,ok,3,3,2,3.0,1,2.4,High
+876,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+877,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+880,Somewhat Risk-Seeking,wave2,12,1,10,10.0,ok,1,2,2,3.0,0,1.6,Moderate
+881,Somewhat Risk-Seeking,wave1,5,1,13,13.0,ok,1,1,1,1.0,0,0.8,Low
+882,Extremely Risk-Seeking,wave2,12,3,41,13.666666666666666,ok,3,3,2,2.0,1,2.2,Moderate
+883,Somewhat Risk-Averse,wave3,15,2,17,8.5,ok,3,2,1,2.0,0,1.6,Moderate
+884,Extremely Risk-Averse,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+888,Somewhat Risk-Averse,wave3,15,1,19,19.0,ok,2,2,2,1.0,1,1.6,Moderate
+889,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+890,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+894,Extremely Risk-Averse,wave2,12,1,9,9.0,ok,1,2,1,3.0,0,1.4,Moderate
+895,Risk-Neutral,wave2,12,2,20,10.0,ok,2,1,1,1.0,1,1.2,Low
+896,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+898,Extremely Risk-Averse,wave3,15,1,11,11.0,ok,1,1,1,1.0,0,0.8,Low
+902,Extremely Risk-Averse,wave2,12,1,14,14.0,ok,2,1,1,1.0,0,1.0,Low
+903,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+906,Risk-Neutral,wave2,12,1,6,6.0,ok,1,1,1,0.0,0,0.6,Low
+907,Somewhat Risk-Averse,wave1,5,2,16,8.0,ok,3,3,1,2.0,1,2.0,Moderate
+913,Risk-Neutral,wave2,12,4,44,11.0,ok,3,3,2,3.0,2,2.6,High
+914,Somewhat Risk-Seeking,wave1,7,1,24,24.0,ok,2,2,1,1.0,0,1.2,Low
+915,Extremely Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+917,Default,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+919,Default,wave2,12,3,149,49.666666666666664,ok,3,3,3,3.0,3,3.0,High
+921,Somewhat Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+924,Somewhat Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+926,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+927,Risk-Neutral,wave1,7,1,9,9.0,ok,1,1,1,2.0,0,1.0,Low
+929,Extremely Risk-Averse,wave2,12,1,8,8.0,ok,1,2,1,2.0,0,1.2,Moderate
+933,Somewhat Risk-Seeking,wave2,12,1,11,11.0,ok,2,2,2,1.0,0,1.4,Moderate
+934,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+938,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+940,Extremely Risk-Seeking,wave2,12,1,7,7.0,ok,0,2,1,1.0,0,0.8,Low
+941,Default,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+942,Extremely Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+944,Somewhat Risk-Seeking,wave2,12,1,10,10.0,ok,1,2,2,2.0,0,1.4,Moderate
+947,Somewhat Risk-Averse,wave1,7,1,65,65.0,ok,2,3,2,3.0,0,2.0,Moderate
+949,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+951,Extremely Risk-Averse,wave2,12,1,26,26.0,ok,2,2,2,1.0,1,1.6,Moderate
+953,Somewhat Risk-Seeking,wave2,12,2,40,20.0,ok,3,3,2,2.0,1,2.2,Moderate
+959,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+962,Default,wave1,5,3,51,17.0,ok,3,2,2,1.0,1,1.8,Moderate
+964,Somewhat Risk-Averse,wave1,7,1,7,7.0,ok,1,1,1,1.0,0,0.8,Low
+965,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+967,Somewhat Risk-Seeking,wave2,12,1,10,10.0,ok,1,2,2,2.0,1,1.6,Moderate
+971,Risk-Neutral,wave1,7,1,6,6.0,ok,1,1,1,1.0,1,1.0,Low
+972,Extremely Risk-Averse,wave2,12,1,13,13.0,ok,1,1,1,1.0,0,0.8,Low
+973,Somewhat Risk-Seeking,wave2,12,2,6,3.0,ok,2,1,1,1.0,0,1.0,Low
+974,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+976,Somewhat Risk-Seeking,wave2,12,1,12,12.0,ok,1,1,1,0.0,0,0.6,Low
+979,Default,wave2,12,1,6,6.0,ok,1,1,1,2.0,0,1.0,Low
+984,Default,wave1,7,2,57,28.5,ok,2,2,3,3.0,2,2.4,Moderate
+985,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+987,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+988,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+989,Default,wave1,5,2,15,7.5,ok,2,2,1,1.0,0,1.2,Moderate
+991,Default,wave3,15,1,16,16.0,ok,2,1,2,1.0,1,1.4,Low
+993,Risk-Neutral,wave2,12,2,11,5.5,ok,1,1,1,2.0,1,1.2,Low
+994,Extremely Risk-Averse,wave3,15,1,14,14.0,ok,2,1,1,1.0,1,1.2,Low
+995,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+996,Somewhat Risk-Averse,wave3,15,1,8,8.0,ok,0,1,1,1.0,0,0.6,Low
+1000,Default,wave1,7,1,38,38.0,ok,2,2,1,3.0,1,1.8,Moderate
+1001,Extremely Risk-Seeking,wave2,12,2,20,10.0,ok,2,2,2,1.0,1,1.6,Moderate
+1002,Somewhat Risk-Averse,wave3,15,2,5,2.5,ok,1,1,1,1.0,2,1.2,Low
+1005,Extremely Risk-Averse,wave2,12,1,15,15.0,ok,1,2,1,1.0,0,1.0,Low
+1009,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1012,Somewhat Risk-Averse,wave3,15,3,44,14.666666666666666,ok,3,3,2,2.0,2,2.4,Moderate
+1017,Default,wave3,15,1,10,10.0,ok,1,2,2,1.0,0,1.2,Low
+1019,Default,wave1,7,1,7,7.0,ok,1,1,1,3.0,0,1.2,Low
+1021,Risk-Neutral,wave1,7,1,4,4.0,ok,1,1,1,1.0,0,0.8,Low
+1023,Default,wave1,7,2,9,4.5,ok,1,1,3,1.0,2,1.6,Low
+1024,Risk-Neutral,wave1,7,1,29,29.0,ok,2,1,1,1.0,1,1.2,Low
+1028,Risk-Neutral,wave1,5,1,22,22.0,ok,2,2,1,2.0,1,1.6,Moderate
+1030,Risk-Neutral,wave2,12,1,8,8.0,ok,0,1,1,2.0,0,0.8,Low
+1032,Risk-Neutral,wave3,15,2,19,9.5,ok,2,2,2,2.0,1,1.8,Moderate
+1033,Extremely Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1040,Somewhat Risk-Seeking,wave3,15,1,5,5.0,ok,1,2,2,2.0,0,1.4,Moderate
+1045,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1048,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1049,Risk-Neutral,wave2,12,1,11,11.0,ok,1,2,1,3.0,1,1.6,Moderate
+1050,Extremely Risk-Averse,wave2,12,2,24,12.0,ok,2,2,3,3.0,2,2.4,Moderate
+1058,Extremely Risk-Averse,wave2,12,2,21,10.5,ok,2,2,2,2.0,1,1.8,Moderate
+1059,Somewhat Risk-Averse,wave2,12,1,28,28.0,ok,2,2,1,2.0,1,1.6,Moderate
+1060,Risk-Neutral,wave1,7,1,21,21.0,ok,2,1,1,1.0,0,1.0,Low
+1061,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1064,Default,wave3,15,2,37,18.5,ok,3,2,2,2.0,1,2.0,Moderate
+1070,Default,wave3,15,2,202,101.0,ok,3,3,2,3.0,1,2.4,Moderate
+1071,Extremely Risk-Averse,wave3,15,1,4,4.0,ok,0,1,2,3.0,0,1.2,Low
+1074,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1078,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1079,Extremely Risk-Averse,wave1,5,4,37,9.25,ok,3,2,2,2.0,1,2.0,Moderate
+1080,Extremely Risk-Seeking,wave1,7,1,9,9.0,ok,1,1,2,3.0,0,1.4,Moderate
+1083,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1087,Extremely Risk-Averse,wave1,7,1,58,58.0,ok,2,3,2,2.0,2,2.2,Moderate
+1088,Risk-Neutral,wave3,15,1,7,7.0,ok,1,1,1,1.0,0,0.8,Low
+1089,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1090,Extremely Risk-Seeking,wave2,12,1,2,2.0,ok,0,1,1,1.0,0,0.6,Low
+1091,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1093,Risk-Neutral,wave1,7,2,46,23.0,ok,3,3,2,3.0,1,2.4,Moderate
+1096,Extremely Risk-Seeking,wave2,12,1,2,2.0,ok,0,0,1,0.0,0,0.2,Very Low
+1099,Somewhat Risk-Averse,wave3,15,1,17,17.0,ok,2,2,2,2.0,0,1.6,Moderate
+1100,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1101,Extremely Risk-Averse,wave1,5,1,9,9.0,ok,1,1,1,2.0,0,1.0,Low
+1102,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1103,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1104,Somewhat Risk-Seeking,wave3,15,1,9,9.0,ok,1,1,1,1.0,0,0.8,Low
+1105,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1108,Somewhat Risk-Averse,wave2,12,1,12,12.0,ok,1,2,2,2.0,0,1.4,Low
+1109,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1111,Default,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1116,Risk-Neutral,wave3,15,1,11,11.0,ok,1,1,1,1.0,0,0.8,Low
+1117,Somewhat Risk-Averse,wave3,15,4,40,10.0,ok,3,3,2,1.0,2,2.2,Moderate
+1118,Extremely Risk-Averse,wave2,12,1,12,12.0,ok,1,1,2,1.0,1,1.2,Low
+1119,Extremely Risk-Averse,wave2,12,1,6,6.0,ok,1,1,1,1.0,0,0.8,Low
+1121,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1122,Somewhat Risk-Averse,wave2,12,2,23,11.5,ok,3,2,2,3.0,1,2.2,Moderate
+1123,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1124,Extremely Risk-Averse,wave2,12,2,32,16.0,ok,3,3,2,3.0,1,2.4,Moderate
+1125,Extremely Risk-Seeking,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+1127,Extremely Risk-Averse,wave1,7,1,11,11.0,ok,1,2,2,1.0,1,1.4,Low
+1128,Somewhat Risk-Averse,wave1,7,1,18,18.0,ok,1,1,1,2.0,0,1.0,Low
+1132,Default,wave2,12,1,6,6.0,ok,1,1,1,2.0,0,1.0,Low
+1133,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1135,Extremely Risk-Seeking,wave2,12,3,43,14.333333333333334,ok,2,1,3,1.0,2,1.8,Moderate
+1136,Risk-Neutral,wave1,7,1,33,33.0,ok,2,2,2,1.0,1,1.6,Moderate
+1137,Default,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1138,Default,wave1,5,1,23,23.0,ok,2,2,1,2.0,0,1.4,Moderate
+1141,Somewhat Risk-Averse,wave3,15,2,29,14.5,ok,2,2,2,1.0,1,1.6,Moderate
+1142,Somewhat Risk-Seeking,wave1,5,1,15,15.0,ok,2,2,2,1.0,0,1.4,Low
+1146,Extremely Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1148,Somewhat Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1150,Extremely Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1154,Somewhat Risk-Seeking,wave3,15,1,17,17.0,ok,2,2,2,2.0,1,1.8,Moderate
+1156,Default,wave2,12,1,28,28.0,ok,2,2,2,2.0,1,1.8,Moderate
+1160,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1164,Risk-Neutral,wave1,7,1,87,87.0,ok,2,3,2,3.0,1,2.2,Moderate
+1165,Somewhat Risk-Seeking,wave2,12,2,49,24.5,ok,2,3,3,2.0,2,2.4,Moderate
+1170,Extremely Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1171,Extremely Risk-Averse,wave3,15,2,103,51.5,ok,3,3,2,2.0,1,2.2,Moderate
+1172,Extremely Risk-Seeking,wave2,12,1,8,8.0,ok,1,1,1,1.0,0,0.8,Low
+1173,Extremely Risk-Averse,wave1,7,1,8,8.0,ok,1,1,1,1.0,0,0.8,Low
+1174,Extremely Risk-Seeking,wave1,7,2,40,20.0,ok,3,3,2,3.0,1,2.4,High
+1175,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1176,Extremely Risk-Seeking,wave1,7,1,16,16.0,ok,2,2,1,1.0,1,1.4,Low
+1177,Somewhat Risk-Seeking,wave2,12,1,11,11.0,ok,1,1,1,2.0,0,1.0,Low
+1178,Extremely Risk-Averse,wave3,15,1,17,17.0,ok,1,1,1,1.0,0,0.8,Low
+1179,Extremely Risk-Averse,wave2,12,4,55,13.75,ok,3,3,2,2.0,1,2.2,High
+1184,Somewhat Risk-Seeking,wave3,15,1,26,26.0,ok,2,2,2,1.0,1,1.6,Moderate
+1191,Somewhat Risk-Averse,wave1,7,1,12,12.0,ok,1,2,1,2.0,0,1.2,Low
+1192,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1196,Somewhat Risk-Averse,wave1,7,1,22,22.0,ok,2,2,2,2.0,1,1.8,Moderate
+1198,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1199,Extremely Risk-Averse,wave3,15,1,26,26.0,ok,2,2,1,3.0,1,1.8,Moderate
+1200,Default,wave2,12,2,13,6.5,ok,3,2,2,2.0,1,2.0,Moderate
+1203,Extremely Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1204,Risk-Neutral,wave3,15,1,6,6.0,ok,1,1,1,1.0,0,0.8,Low
+1209,Somewhat Risk-Seeking,wave2,12,2,29,14.5,ok,3,2,2,1.0,0,1.6,Moderate
+1215,Extremely Risk-Averse,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+1217,Extremely Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1220,Extremely Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1223,Extremely Risk-Seeking,wave2,12,1,11,11.0,ok,1,1,2,1.0,0,1.0,Low
+1227,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1228,Extremely Risk-Seeking,wave1,5,1,14,14.0,ok,1,2,1,1.0,0,1.0,Low
+1229,Somewhat Risk-Seeking,wave2,12,4,77,19.25,ok,3,3,2,3.0,1,2.4,Moderate
+1232,Somewhat Risk-Averse,wave1,7,1,4,4.0,ok,1,1,1,1.0,0,0.8,Low
+1234,Default,wave2,12,1,13,13.0,ok,1,1,1,3.0,0,1.2,Low
+1236,Default,wave3,15,3,55,18.333333333333332,ok,3,3,2,3.0,3,2.8,High
+1238,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1239,Extremely Risk-Seeking,wave1,7,3,20,6.666666666666667,ok,2,2,3,2.0,2,2.2,Moderate
+1244,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1251,Somewhat Risk-Seeking,wave3,15,1,23,23.0,ok,2,2,1,2.0,1,1.6,Moderate
+1254,Risk-Neutral,wave3,15,2,40,20.0,ok,3,2,3,2.0,2,2.4,Moderate
+1256,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1257,Risk-Neutral,wave3,15,1,24,24.0,ok,2,2,1,3.0,0,1.6,Moderate
+1261,Extremely Risk-Seeking,wave3,15,1,11,11.0,ok,1,2,2,1.0,1,1.4,Low
+1267,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1271,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1273,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1274,Default,wave1,1,2,25,12.5,ok,2,1,1,1.0,0,1.0,Low
+1283,Extremely Risk-Averse,wave3,15,1,16,16.0,ok,1,2,2,3.0,2,2.0,Moderate
+1294,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1302,Somewhat Risk-Seeking,wave2,12,1,4,4.0,ok,1,0,1,2.0,1,1.0,Low
+1307,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1308,Extremely Risk-Averse,wave2,12,1,13,13.0,ok,1,1,1,1.0,0,0.8,Low
+1309,Extremely Risk-Averse,wave2,12,1,16,16.0,ok,2,2,2,2.0,1,1.8,Moderate
+1311,Risk-Neutral,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+1312,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1315,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1316,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1318,Extremely Risk-Seeking,wave3,15,1,16,16.0,ok,1,2,1,2.0,1,1.4,Moderate
+1320,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1321,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1322,Somewhat Risk-Averse,wave1,7,1,16,16.0,ok,2,2,1,2.0,0,1.4,Moderate
+1327,Extremely Risk-Seeking,wave3,15,1,10,10.0,ok,1,2,2,2.0,0,1.4,Low
+1329,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1332,Default,wave3,15,2,32,16.0,ok,3,2,2,2.0,1,2.0,Moderate
+1335,Somewhat Risk-Seeking,wave3,15,1,7,7.0,ok,0,1,1,1.0,0,0.6,Low
+1336,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1337,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1338,Somewhat Risk-Averse,wave1,5,1,7,7.0,ok,1,2,1,1.0,0,1.0,Low
+1341,Extremely Risk-Averse,wave2,12,1,42,42.0,ok,2,2,2,2.0,1,1.8,Moderate
+1344,Default,wave1,7,2,16,8.0,ok,2,2,2,2.0,1,1.8,Moderate
+1346,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1347,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1348,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1349,Risk-Neutral,wave2,12,2,40,20.0,ok,3,3,2,2.0,1,2.2,Moderate
+1351,Somewhat Risk-Averse,wave2,12,1,12,12.0,ok,1,1,1,1.0,0,0.8,Low
+1354,Default,wave2,12,4,67,16.75,ok,3,3,2,2.0,1,2.2,Moderate
+1358,Extremely Risk-Seeking,wave3,15,1,3,3.0,ok,1,1,1,1.0,0,0.8,Low
+1359,Somewhat Risk-Seeking,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+1362,Extremely Risk-Averse,wave3,15,1,7,7.0,ok,1,1,2,2.0,1,1.4,Low
+1363,Risk-Neutral,wave3,15,1,10,10.0,ok,1,1,1,1.0,0,0.8,Low
+1364,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1365,Default,wave1,1,0,0,,no_followup,0,0,0,,0,0.0,
+1371,Extremely Risk-Seeking,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+1374,Extremely Risk-Averse,wave1,7,1,8,8.0,ok,1,1,1,2.0,0,1.0,Low
+1376,Somewhat Risk-Seeking,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+1383,Risk-Neutral,wave3,15,1,13,13.0,ok,1,2,2,1.0,1,1.4,Low
+1384,Somewhat Risk-Averse,wave2,12,1,15,15.0,ok,1,1,1,2.0,2,1.4,Low
+1385,Extremely Risk-Seeking,wave1,5,1,8,8.0,ok,1,2,2,2.0,1,1.6,Moderate
+1386,Extremely Risk-Seeking,wave2,12,4,164,41.0,ok,3,3,2,3.0,1,2.4,Moderate
+1392,Risk-Neutral,wave1,7,1,5,5.0,ok,0,1,1,1.0,0,0.6,Low
+1394,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1396,Risk-Neutral,wave1,7,3,36,12.0,ok,3,1,2,2.0,1,1.8,Moderate
+1397,Default,wave1,7,1,47,47.0,ok,2,2,2,2.0,1,1.8,Moderate
+1403,Somewhat Risk-Averse,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+1404,Somewhat Risk-Seeking,wave3,15,1,17,17.0,ok,2,1,1,2.0,0,1.2,Moderate
+1405,Somewhat Risk-Seeking,wave3,15,3,138,46.0,ok,3,3,2,3.0,1,2.4,Moderate
+1407,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1408,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1411,Somewhat Risk-Averse,wave1,5,1,19,19.0,ok,2,2,2,1.0,1,1.6,Moderate
+1414,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1416,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1417,Default,wave2,12,1,10,10.0,ok,1,1,1,1.0,1,1.0,Low
+1419,Somewhat Risk-Seeking,wave1,7,1,6,6.0,ok,1,1,1,2.0,0,1.0,Low
+1421,Risk-Neutral,wave3,15,1,6,6.0,ok,1,2,1,2.0,0,1.2,Low
+1431,Somewhat Risk-Averse,wave1,5,1,6,6.0,ok,1,1,1,3.0,0,1.2,Low
+1432,Somewhat Risk-Seeking,wave1,5,1,17,17.0,ok,2,2,2,2.0,1,1.8,Moderate
+1433,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1434,Default,wave3,15,1,3,3.0,ok,0,1,1,0.0,0,0.4,Very Low
+1438,Default,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1439,Extremely Risk-Seeking,wave2,12,3,87,29.0,ok,3,3,2,3.0,1,2.4,Moderate
+1440,Somewhat Risk-Averse,wave1,7,1,12,12.0,ok,1,1,1,1.0,0,0.8,Low
+1441,Extremely Risk-Averse,wave2,12,1,7,7.0,ok,1,1,1,1.0,0,0.8,Low
+1443,Somewhat Risk-Seeking,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+1447,Risk-Neutral,wave2,12,1,31,31.0,ok,2,2,1,3.0,0,1.6,Moderate
+1450,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1452,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1453,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1456,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1457,Somewhat Risk-Averse,wave1,7,2,31,15.5,ok,3,2,2,1.0,1,1.8,Moderate
+1458,Somewhat Risk-Seeking,wave2,12,2,36,18.0,ok,3,3,2,2.0,1,2.2,Moderate
+1461,Extremely Risk-Seeking,wave2,12,3,88,29.333333333333332,ok,3,3,2,3.0,2,2.6,High
+1462,Somewhat Risk-Seeking,wave2,12,3,31,10.333333333333334,ok,3,3,2,2.0,2,2.4,Moderate
+1463,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1464,Risk-Neutral,wave2,12,1,7,7.0,ok,1,1,1,1.0,0,0.8,Low
+1465,Extremely Risk-Seeking,wave2,12,2,21,10.5,ok,3,1,2,1.0,1,1.6,Moderate
+1467,Default,wave2,12,2,34,17.0,ok,3,1,2,2.0,1,1.8,Moderate
+1469,Extremely Risk-Averse,wave2,12,2,15,7.5,ok,2,1,1,1.0,0,1.0,Low
+1470,Somewhat Risk-Averse,wave2,12,1,15,15.0,ok,2,2,2,1.0,1,1.6,Moderate
+1472,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1473,Extremely Risk-Seeking,wave3,15,1,8,8.0,ok,1,1,2,2.0,0,1.2,Low
+1477,Risk-Neutral,wave1,7,1,14,14.0,ok,2,2,2,1.0,1,1.6,Moderate
+1478,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1479,Somewhat Risk-Averse,wave2,12,2,30,15.0,ok,3,2,2,1.0,0,1.6,Moderate
+1480,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1484,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1488,Extremely Risk-Seeking,wave1,7,1,8,8.0,ok,1,1,1,1.0,0,0.8,Low
+1491,Risk-Neutral,wave3,15,1,8,8.0,ok,1,1,1,1.0,0,0.8,Low
+1494,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1498,Risk-Neutral,wave1,7,1,17,17.0,ok,2,1,2,2.0,1,1.6,Moderate
+1502,Default,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1503,Extremely Risk-Averse,wave3,15,1,21,21.0,ok,2,2,2,2.0,1,1.8,Moderate
+1504,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1505,Default,wave2,12,1,13,13.0,ok,1,2,2,2.0,0,1.4,Moderate
+1506,Default,wave2,12,1,5,5.0,ok,1,1,1,2.0,0,1.0,Low
+1510,Risk-Neutral,wave1,7,1,14,14.0,ok,1,1,2,1.0,1,1.2,Low
+1517,Somewhat Risk-Averse,wave2,12,2,87,43.5,ok,3,3,2,2.0,1,2.2,Moderate
+1522,Somewhat Risk-Averse,wave3,15,1,25,25.0,ok,2,1,2,0.0,0,1.0,Low
+1523,Somewhat Risk-Seeking,wave2,12,1,6,6.0,ok,1,1,1,1.0,0,0.8,Low
+1525,Risk-Neutral,wave3,15,1,9,9.0,ok,1,2,2,3.0,0,1.6,Moderate
+1526,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1527,Default,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+1530,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1531,Extremely Risk-Seeking,wave2,12,1,7,7.0,ok,1,2,2,1.0,0,1.2,Low
+1532,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1533,Somewhat Risk-Averse,wave1,5,1,12,12.0,ok,1,2,2,2.0,2,1.8,Moderate
+1535,Extremely Risk-Seeking,wave3,15,1,26,26.0,ok,2,2,2,2.0,1,1.8,Moderate
+1537,Somewhat Risk-Averse,wave3,15,2,23,11.5,ok,2,2,1,1.0,0,1.2,Moderate
+1539,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1540,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1544,Extremely Risk-Averse,wave2,12,3,25,8.333333333333334,ok,3,2,1,3.0,1,2.0,Moderate
+1547,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1548,Somewhat Risk-Seeking,wave2,12,1,5,5.0,ok,1,1,1,1.0,0,0.8,Low
+1550,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1551,Somewhat Risk-Seeking,wave2,12,3,55,18.333333333333332,ok,3,3,2,3.0,1,2.4,Moderate
+1553,Default,wave1,7,2,30,15.0,ok,3,3,1,3.0,1,2.2,High
+1557,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1558,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1559,Extremely Risk-Seeking,wave1,7,1,55,55.0,ok,2,2,1,3.0,0,1.6,Moderate
+1565,Extremely Risk-Seeking,wave2,12,1,6,6.0,ok,1,2,1,1.0,1,1.2,Low
+1567,Extremely Risk-Seeking,wave2,12,2,43,21.5,ok,3,2,2,3.0,1,2.2,High
+1568,Somewhat Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1569,Default,wave1,7,1,35,35.0,ok,2,2,3,2.0,2,2.2,Moderate
+1571,Extremely Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1572,Extremely Risk-Averse,wave1,7,1,9,9.0,ok,1,2,2,3.0,0,1.6,Moderate
+1576,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1579,Extremely Risk-Seeking,wave1,7,1,35,35.0,ok,2,2,2,3.0,1,2.0,Moderate
+1581,Default,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1582,Somewhat Risk-Seeking,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+1583,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1584,Somewhat Risk-Averse,wave2,12,2,19,9.5,ok,2,2,2,1.0,1,1.6,Moderate
+1585,Extremely Risk-Seeking,wave2,12,2,14,7.0,ok,2,2,0,3.0,1,1.6,Moderate
+1587,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1588,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1591,Somewhat Risk-Averse,wave1,7,1,3,3.0,ok,1,1,1,2.0,0,1.0,Low
+1592,Somewhat Risk-Seeking,wave1,5,1,11,11.0,ok,1,2,1,2.0,0,1.2,Low
+1594,Default,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1599,Default,wave1,7,1,6,6.0,ok,1,0,3,0.0,2,1.2,Low
+1601,Somewhat Risk-Averse,wave3,15,1,5,5.0,ok,1,1,1,1.0,0,0.8,Low
+1607,Risk-Neutral,wave2,12,1,11,11.0,ok,1,1,1,1.0,0,0.8,Low
+1608,Extremely Risk-Seeking,wave3,15,1,35,35.0,ok,2,2,1,2.0,0,1.4,Moderate
+1609,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1610,Somewhat Risk-Seeking,wave2,12,4,64,16.0,ok,3,3,0,3.0,2,2.2,Moderate
+1612,Extremely Risk-Seeking,wave3,15,1,16,16.0,ok,2,2,1,2.0,1,1.6,Moderate
+1613,Somewhat Risk-Seeking,wave1,7,3,122,40.666666666666664,ok,3,3,3,3.0,3,3.0,High
+1614,Somewhat Risk-Seeking,wave3,15,4,68,17.0,ok,3,3,2,1.0,1,2.0,Moderate
+1616,Extremely Risk-Seeking,wave3,15,1,6,6.0,ok,1,1,1,1.0,0,0.8,Low
+1619,Extremely Risk-Seeking,wave3,15,1,7,7.0,ok,1,1,1,1.0,0,0.8,Low
+1620,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1621,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1622,Somewhat Risk-Seeking,wave2,12,3,38,12.666666666666666,ok,3,3,2,1.0,1,2.0,Moderate
+1623,Somewhat Risk-Seeking,wave2,12,1,16,16.0,ok,2,2,1,1.0,0,1.2,Moderate
+1624,Risk-Neutral,wave2,12,2,55,27.5,ok,3,3,1,3.0,1,2.2,Moderate
+1629,Somewhat Risk-Seeking,wave1,1,1,5,5.0,ok,1,1,1,1.0,0,0.8,Low
+1631,Somewhat Risk-Seeking,wave3,15,2,112,56.0,ok,3,3,2,3.0,3,2.8,High
+1632,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1634,Extremely Risk-Averse,wave2,12,2,30,15.0,ok,2,2,2,2.0,1,1.8,Moderate
+1641,Extremely Risk-Averse,wave1,7,1,12,12.0,ok,1,1,2,1.0,0,1.0,Low
+1645,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1649,Somewhat Risk-Averse,wave1,7,4,113,28.25,ok,3,3,2,3.0,2,2.6,High
+1652,Extremely Risk-Seeking,wave3,15,1,9,9.0,ok,1,1,2,1.0,0,1.0,Low
+1658,Extremely Risk-Averse,wave2,12,1,18,18.0,ok,1,2,1,2.0,1,1.4,Moderate
+1660,Default,wave2,12,4,73,18.25,ok,3,3,2,3.0,2,2.6,High
+1662,Somewhat Risk-Averse,wave1,5,4,46,11.5,ok,3,3,2,3.0,1,2.4,Moderate
+1664,Default,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+1667,Somewhat Risk-Seeking,wave1,7,3,56,18.666666666666668,ok,3,3,2,3.0,1,2.4,Moderate
+1670,Extremely Risk-Seeking,wave2,12,3,39,13.0,ok,3,2,2,2.0,0,1.8,Moderate
+1672,Somewhat Risk-Seeking,wave3,15,2,34,17.0,ok,3,3,2,2.0,1,2.2,High
+1676,Default,wave1,7,2,16,8.0,ok,1,1,3,2.0,2,1.8,Moderate
+1677,Somewhat Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1678,Extremely Risk-Seeking,wave1,7,2,42,21.0,ok,3,2,2,1.0,1,1.8,Moderate
+1679,Extremely Risk-Seeking,wave3,15,1,19,19.0,ok,2,1,1,1.0,1,1.2,Low
+1680,Extremely Risk-Averse,wave1,7,3,78,26.0,ok,3,3,1,3.0,1,2.2,Moderate
+1686,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1689,Extremely Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1691,Extremely Risk-Seeking,wave3,15,2,16,8.0,ok,2,1,1,1.0,0,1.0,Moderate
+1696,Extremely Risk-Averse,wave1,7,4,86,21.5,ok,3,3,2,3.0,1,2.4,Moderate
+1699,Somewhat Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1704,Somewhat Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1707,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1711,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1714,Extremely Risk-Averse,wave2,12,2,28,14.0,ok,2,2,1,2.0,0,1.4,Moderate
+1717,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1718,Somewhat Risk-Averse,wave3,15,1,16,16.0,ok,2,1,2,1.0,0,1.2,Moderate
+1721,Extremely Risk-Averse,wave1,7,2,25,12.5,ok,2,2,2,3.0,1,2.0,Moderate
+1722,Somewhat Risk-Seeking,wave1,5,1,9,9.0,ok,1,1,1,1.0,1,1.0,Low
+1724,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1726,Risk-Neutral,wave3,15,1,18,18.0,ok,2,2,1,2.0,0,1.4,Moderate
+1727,Risk-Neutral,wave1,7,1,15,15.0,ok,2,1,1,1.0,0,1.0,Low
+1730,Somewhat Risk-Averse,wave2,12,1,39,39.0,ok,2,2,2,3.0,1,2.0,Moderate
+1731,Extremely Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1732,Default,wave2,12,1,20,20.0,ok,2,2,1,2.0,1,1.6,Moderate
+1733,Extremely Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1735,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1738,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1743,Somewhat Risk-Averse,wave1,7,1,6,6.0,ok,1,1,1,1.0,0,0.8,Low
+1746,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1748,Somewhat Risk-Averse,wave3,15,1,52,52.0,ok,2,3,1,3.0,1,2.0,Moderate
+1752,Default,wave1,1,0,0,,no_followup,0,0,0,,0,0.0,
+1756,Extremely Risk-Seeking,wave3,15,2,42,21.0,ok,3,3,1,2.0,1,2.0,Moderate
+1763,Somewhat Risk-Seeking,wave3,15,2,134,67.0,ok,3,3,2,3.0,2,2.6,High
+1766,Somewhat Risk-Averse,wave2,12,2,68,34.0,ok,3,3,2,2.0,1,2.2,High
+1767,Extremely Risk-Seeking,wave2,12,1,15,15.0,ok,2,2,2,2.0,1,1.8,Moderate
+1768,Somewhat Risk-Seeking,wave2,12,1,12,12.0,ok,1,1,1,1.0,0,0.8,Low
+1773,Extremely Risk-Averse,wave3,15,1,12,12.0,ok,1,1,2,1.0,1,1.2,Low
+1774,Somewhat Risk-Averse,wave3,15,1,3,3.0,ok,1,0,3,0.0,2,1.2,Low
+1776,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1778,Somewhat Risk-Averse,wave2,12,1,8,8.0,ok,1,2,1,2.0,0,1.2,Low
+1779,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1781,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1782,Default,wave2,12,4,125,31.25,ok,3,3,2,3.0,1,2.4,Moderate
+1784,Somewhat Risk-Averse,wave1,7,1,4,4.0,ok,1,1,1,1.0,0,0.8,Low
+1786,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1787,Risk-Neutral,wave3,15,1,3,3.0,ok,1,1,1,2.0,0,1.0,Low
+1789,Extremely Risk-Seeking,wave2,12,1,9,9.0,ok,1,2,2,1.0,1,1.4,Low
+1791,Extremely Risk-Averse,wave2,12,2,57,28.5,ok,3,3,2,3.0,1,2.4,High
+1800,Extremely Risk-Averse,wave3,15,3,344,114.66666666666669,ok,3,3,2,3.0,2,2.6,High
+1801,Somewhat Risk-Seeking,wave1,5,2,33,16.5,ok,2,2,2,3.0,2,2.2,Moderate
+1804,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1808,Extremely Risk-Seeking,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+1809,Default,wave3,15,1,9,9.0,ok,0,1,1,1.0,0,0.6,Low
+1817,Extremely Risk-Seeking,wave2,12,1,5,5.0,ok,1,2,1,1.0,0,1.0,Low
+1825,Somewhat Risk-Seeking,wave2,12,2,38,19.0,ok,3,3,2,3.0,1,2.4,Moderate
+1829,Extremely Risk-Seeking,wave2,12,1,62,62.0,ok,2,3,1,3.0,0,1.8,Moderate
+1831,Default,wave3,15,1,11,11.0,ok,1,1,1,2.0,1,1.2,Low
+1835,Default,wave3,15,2,22,11.0,ok,2,2,2,1.0,0,1.4,Moderate
+1837,Somewhat Risk-Averse,wave3,15,4,35,8.75,ok,3,3,2,3.0,2,2.6,High
+1838,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1841,Extremely Risk-Seeking,wave2,12,1,11,11.0,ok,1,1,1,0.0,0,0.6,Low
+1842,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1843,Somewhat Risk-Seeking,wave1,7,1,3,3.0,ok,0,1,1,1.0,0,0.6,Low
+1846,Risk-Neutral,wave1,7,1,12,12.0,ok,1,1,1,2.0,1,1.2,Low
+1848,Default,wave3,15,2,43,21.5,ok,3,3,2,2.0,1,2.2,Moderate
+1849,Extremely Risk-Averse,wave2,12,4,25,6.25,ok,3,2,2,2.0,2,2.2,Moderate
+1851,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1853,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1857,Default,wave2,12,2,21,10.5,ok,2,2,2,2.0,1,1.8,Moderate
+1864,Default,wave3,15,1,5,5.0,ok,1,1,1,1.0,0,0.8,Low
+1869,Somewhat Risk-Seeking,wave3,15,1,21,21.0,ok,2,2,2,2.0,0,1.6,Moderate
+1870,Default,wave2,12,4,38,9.5,ok,3,2,2,2.0,1,2.0,Moderate
+1871,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1872,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1873,Somewhat Risk-Averse,wave2,12,1,8,8.0,ok,1,1,1,1.0,0,0.8,Low
+1876,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1883,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1885,Extremely Risk-Averse,wave2,12,1,42,42.0,ok,2,2,1,2.0,1,1.6,Moderate
+1886,Somewhat Risk-Averse,wave1,7,1,8,8.0,ok,1,2,1,3.0,0,1.4,Moderate
+1887,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1888,Risk-Neutral,wave3,15,2,19,9.5,ok,2,2,2,3.0,1,2.0,Moderate
+1890,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1891,Risk-Neutral,wave1,7,1,12,12.0,ok,1,1,1,1.0,0,0.8,Low
+1892,Extremely Risk-Averse,wave3,15,1,27,27.0,ok,2,2,1,3.0,1,1.8,Moderate
+1893,Default,wave3,15,1,24,24.0,ok,2,2,1,2.0,0,1.4,Moderate
+1895,Default,wave1,7,1,20,20.0,ok,2,2,1,2.0,1,1.6,Moderate
+1897,Extremely Risk-Seeking,wave3,15,1,4,4.0,ok,0,1,1,1.0,0,0.6,Low
+1898,Somewhat Risk-Seeking,wave3,15,1,18,18.0,ok,2,2,2,1.0,1,1.6,Moderate
+1901,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1902,Default,wave1,7,1,4,4.0,ok,0,1,2,2.0,0,1.0,Low
+1903,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1904,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1905,Extremely Risk-Averse,wave1,7,3,74,24.666666666666668,ok,3,3,3,3.0,2,2.8,High
+1906,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1910,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1911,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1913,Somewhat Risk-Averse,wave2,12,1,37,37.0,ok,2,2,2,2.0,2,2.0,Moderate
+1914,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1917,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1918,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1919,Risk-Neutral,wave2,12,1,15,15.0,ok,2,2,1,3.0,0,1.6,Moderate
+1920,Extremely Risk-Averse,wave3,15,4,79,19.75,ok,3,3,2,2.0,1,2.2,Moderate
+1923,Somewhat Risk-Seeking,wave2,12,4,49,12.25,ok,3,2,3,1.0,2,2.2,Moderate
+1924,Somewhat Risk-Averse,wave1,1,0,0,,no_followup,0,0,0,,0,0.0,
+1929,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1930,Extremely Risk-Seeking,wave2,12,2,40,20.0,ok,3,3,2,1.0,1,2.0,Moderate
+1931,Default,wave2,12,1,17,17.0,ok,2,2,1,3.0,0,1.6,Moderate
+1932,Extremely Risk-Averse,wave3,15,3,66,22.0,ok,3,3,2,2.0,1,2.2,Moderate
+1933,Default,wave3,15,1,30,30.0,ok,2,3,2,3.0,1,2.2,Moderate
+1936,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1937,Extremely Risk-Averse,wave3,15,1,13,13.0,ok,1,2,2,1.0,0,1.2,Low
+1940,Risk-Neutral,wave2,12,1,12,12.0,ok,1,1,2,1.0,1,1.2,Low
+1942,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+1945,Somewhat Risk-Averse,wave3,15,2,42,21.0,ok,3,3,2,3.0,1,2.4,High
+1946,Default,wave3,15,1,17,17.0,ok,2,2,2,2.0,0,1.6,Moderate
+1949,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1952,Default,wave2,12,1,6,6.0,ok,1,1,1,1.0,0,0.8,Low
+1955,Extremely Risk-Averse,wave2,12,1,37,37.0,ok,2,2,1,2.0,1,1.6,Moderate
+1959,Extremely Risk-Averse,wave1,7,2,19,9.5,ok,2,2,1,1.0,0,1.2,Moderate
+1963,Default,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+1964,Extremely Risk-Seeking,wave2,12,2,48,24.0,ok,2,2,1,3.0,0,1.6,Moderate
+1966,Extremely Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1967,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1972,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1977,Extremely Risk-Seeking,wave2,12,1,7,7.0,ok,1,1,2,1.0,1,1.2,Low
+1979,Somewhat Risk-Averse,wave3,15,1,14,14.0,ok,1,1,1,1.0,0,0.8,Low
+1983,Extremely Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+1986,Somewhat Risk-Seeking,wave1,7,1,5,5.0,ok,1,1,1,0.0,0,0.6,Low
+1987,Risk-Neutral,wave1,7,4,45,11.25,ok,3,2,2,1.0,1,1.8,Moderate
+1989,Default,wave3,15,1,12,12.0,ok,1,1,1,1.0,1,1.0,Low
+1991,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+1993,Extremely Risk-Seeking,wave1,7,2,43,21.5,ok,3,2,2,2.0,1,2.0,Moderate
+1995,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2001,Default,wave3,15,2,23,11.5,ok,2,2,2,2.0,1,1.8,Moderate
+2005,Extremely Risk-Seeking,wave2,12,1,2,2.0,ok,1,0,3,0.0,2,1.2,Low
+2006,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2008,Extremely Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2014,Extremely Risk-Seeking,wave3,15,1,10,10.0,ok,1,2,1,3.0,0,1.4,Moderate
+2016,Somewhat Risk-Averse,wave3,15,2,11,5.5,ok,2,1,2,2.0,1,1.6,Moderate
+2017,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2019,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2020,Extremely Risk-Seeking,wave2,12,4,72,18.0,ok,3,2,1,3.0,2,2.2,Moderate
+2022,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2023,Somewhat Risk-Seeking,wave1,5,1,7,7.0,ok,1,1,1,1.0,1,1.0,Low
+2030,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2032,Extremely Risk-Averse,wave2,12,1,10,10.0,ok,1,2,1,1.0,0,1.0,Low
+2035,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2036,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2040,Somewhat Risk-Seeking,wave1,5,1,5,5.0,ok,1,1,1,1.0,0,0.8,Low
+2041,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2042,Somewhat Risk-Averse,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+2047,Risk-Neutral,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+2049,Extremely Risk-Seeking,wave3,15,1,8,8.0,ok,1,2,1,3.0,0,1.4,Moderate
+2050,Somewhat Risk-Seeking,wave2,12,3,45,15.0,ok,3,3,2,3.0,1,2.4,Moderate
+2052,Extremely Risk-Seeking,wave1,7,1,39,39.0,ok,2,2,2,3.0,2,2.2,Moderate
+2053,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2057,Risk-Neutral,wave1,7,1,11,11.0,ok,1,1,1,2.0,0,1.0,Low
+2060,Default,wave1,7,1,4,4.0,ok,1,1,3,0.0,2,1.4,Low
+2063,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2064,Extremely Risk-Seeking,wave1,7,2,30,15.0,ok,2,2,2,1.0,0,1.4,Moderate
+2065,Extremely Risk-Averse,wave3,15,1,15,15.0,ok,1,1,1,1.0,0,0.8,Low
+2066,Somewhat Risk-Averse,wave3,15,1,6,6.0,ok,1,1,1,1.0,0,0.8,Low
+2068,Extremely Risk-Averse,wave1,7,1,20,20.0,ok,2,2,2,2.0,1,1.8,Moderate
+2069,Extremely Risk-Seeking,wave2,12,1,18,18.0,ok,2,2,1,1.0,1,1.4,Low
+2071,Somewhat Risk-Averse,wave1,7,1,12,12.0,ok,1,1,1,1.0,0,0.8,Low
+2072,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2073,Extremely Risk-Averse,wave2,12,1,9,9.0,ok,1,1,1,3.0,0,1.2,Low
+2075,Extremely Risk-Seeking,wave1,7,1,13,13.0,ok,1,2,2,1.0,0,1.2,Low
+2078,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2088,Risk-Neutral,wave1,7,1,10,10.0,ok,1,2,1,2.0,0,1.2,Low
+2090,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2091,Somewhat Risk-Seeking,wave3,15,1,13,13.0,ok,1,1,1,2.0,1,1.2,Low
+2093,Extremely Risk-Averse,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+2094,Extremely Risk-Averse,wave2,12,2,25,12.5,ok,3,2,2,2.0,1,2.0,Moderate
+2096,Extremely Risk-Seeking,wave3,15,3,103,34.333333333333336,ok,3,3,2,3.0,1,2.4,Moderate
+2097,Default,wave2,12,2,24,12.0,ok,2,1,3,3.0,2,2.2,Moderate
+2099,Somewhat Risk-Seeking,wave2,12,1,27,27.0,ok,2,2,2,2.0,1,1.8,Moderate
+2100,Somewhat Risk-Averse,wave1,7,1,5,5.0,ok,1,0,3,1.0,2,1.4,Low
+2102,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2103,Extremely Risk-Seeking,wave2,12,1,24,24.0,ok,2,2,2,2.0,0,1.6,Moderate
+2104,Extremely Risk-Seeking,wave2,12,1,20,20.0,ok,2,2,1,3.0,1,1.8,Moderate
+2106,Default,wave1,7,2,10,5.0,ok,1,1,2,2.0,1,1.4,Low
+2107,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2108,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2109,Somewhat Risk-Seeking,wave3,15,3,22,7.333333333333333,ok,3,2,1,1.0,0,1.4,Moderate
+2112,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2115,Extremely Risk-Averse,wave3,15,1,5,5.0,ok,1,1,1,1.0,0,0.8,Low
+2116,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2118,Somewhat Risk-Seeking,wave3,15,2,27,13.5,ok,2,1,2,1.0,0,1.2,Moderate
+2121,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2122,Extremely Risk-Seeking,wave3,15,1,6,6.0,ok,0,1,2,1.0,0,0.8,Low
+2123,Somewhat Risk-Seeking,wave3,15,1,4,4.0,ok,1,1,1,1.0,0,0.8,Low
+2124,Somewhat Risk-Averse,wave2,12,1,9,9.0,ok,1,2,1,2.0,0,1.2,Low
+2125,Somewhat Risk-Seeking,wave3,15,1,2,2.0,ok,1,0,2,0.0,2,1.0,Low
+2126,Extremely Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2128,Extremely Risk-Seeking,wave3,15,1,6,6.0,ok,1,1,1,2.0,0,1.0,Low
+2130,Extremely Risk-Seeking,wave2,12,3,31,10.333333333333334,ok,3,3,2,3.0,1,2.4,Moderate
+2132,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2133,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2134,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2135,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2139,Extremely Risk-Averse,wave3,15,2,25,12.5,ok,3,3,1,2.0,0,1.8,Moderate
+2140,Risk-Neutral,wave1,7,3,25,8.333333333333334,ok,3,2,3,3.0,2,2.6,High
+2145,Extremely Risk-Seeking,wave1,7,4,45,11.25,ok,3,3,2,2.0,1,2.2,Moderate
+2149,Default,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+2153,Extremely Risk-Averse,wave2,12,1,14,14.0,ok,1,2,1,1.0,0,1.0,Low
+2157,Risk-Neutral,wave2,12,2,49,24.5,ok,3,3,2,2.0,1,2.2,Moderate
+2166,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2167,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2169,Risk-Neutral,wave2,12,1,12,12.0,ok,1,1,1,1.0,0,0.8,Low
+2170,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2171,Extremely Risk-Averse,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+2173,Extremely Risk-Seeking,wave3,15,4,62,15.5,ok,3,2,2,2.0,2,2.2,Moderate
+2175,Extremely Risk-Seeking,wave2,12,4,31,7.75,ok,3,1,2,1.0,0,1.4,Low
+2179,Extremely Risk-Seeking,wave2,12,1,14,14.0,ok,2,1,1,2.0,1,1.4,Low
+2182,Extremely Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2183,Extremely Risk-Seeking,wave2,12,2,33,16.5,ok,2,2,2,2.0,2,2.0,Moderate
+2185,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2187,Default,wave3,15,1,14,14.0,ok,1,1,2,2.0,0,1.2,Low
+2188,Default,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2189,Somewhat Risk-Averse,wave1,5,1,11,11.0,ok,1,1,1,1.0,0,0.8,Low
+2196,Extremely Risk-Seeking,wave3,15,1,18,18.0,ok,2,2,1,2.0,0,1.4,Moderate
+2204,Extremely Risk-Averse,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+2205,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2208,Default,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2213,Extremely Risk-Averse,wave1,5,3,89,29.666666666666668,ok,3,3,2,3.0,2,2.6,High
+2214,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2217,Extremely Risk-Averse,wave3,15,2,27,13.5,ok,3,2,2,2.0,1,2.0,Moderate
+2220,Somewhat Risk-Seeking,wave1,7,1,6,6.0,ok,1,0,2,0.0,1,0.8,Low
+2222,Somewhat Risk-Seeking,wave3,15,1,3,3.0,ok,1,1,1,1.0,0,0.8,Low
+2223,Risk-Neutral,wave2,12,2,31,15.5,ok,2,2,3,2.0,2,2.2,Moderate
+2224,Somewhat Risk-Seeking,wave2,12,4,82,20.5,ok,3,3,3,3.0,3,3.0,High
+2225,Somewhat Risk-Seeking,wave3,15,2,8,4.0,ok,2,1,1,2.0,0,1.2,Low
+2226,Default,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+2228,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2231,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2233,Somewhat Risk-Averse,wave1,5,1,5,5.0,ok,1,1,1,1.0,0,0.8,Low
+2235,Extremely Risk-Averse,wave3,15,1,12,12.0,ok,1,1,1,1.0,0,0.8,Low
+2236,Somewhat Risk-Seeking,wave3,15,2,15,7.5,ok,2,2,1,1.0,1,1.4,Low
+2237,Extremely Risk-Averse,wave2,12,2,132,66.0,ok,3,3,2,3.0,2,2.6,High
+2239,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2241,Somewhat Risk-Averse,wave1,7,3,112,37.333333333333336,ok,3,3,2,3.0,2,2.6,High
+2244,Default,wave1,7,1,21,21.0,ok,2,2,2,1.0,1,1.6,Moderate
+2245,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2248,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2249,Somewhat Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2252,Extremely Risk-Averse,wave2,12,1,15,15.0,ok,2,2,0,2.0,1,1.4,Low
+2253,Risk-Neutral,wave2,12,2,17,8.5,ok,2,1,2,1.0,1,1.4,Low
+2254,Risk-Neutral,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+2255,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2256,Default,wave1,7,2,61,30.5,ok,3,3,2,1.0,0,1.8,Moderate
+2258,Extremely Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2261,Risk-Neutral,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2262,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2264,Extremely Risk-Averse,wave3,15,1,3,3.0,ok,0,1,1,1.0,0,0.6,Low
+2271,Extremely Risk-Seeking,wave2,12,1,10,10.0,ok,2,2,2,2.0,0,1.6,Moderate
+2272,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2274,Extremely Risk-Seeking,wave2,12,2,20,10.0,ok,2,1,1,1.0,0,1.0,Low
+2275,Extremely Risk-Averse,wave2,12,1,10,10.0,ok,1,2,1,3.0,0,1.4,Moderate
+2276,Extremely Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2277,Default,wave3,15,1,7,7.0,ok,1,1,3,0.0,2,1.4,Low
+2279,Extremely Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2281,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2282,Somewhat Risk-Averse,wave2,12,2,11,5.5,ok,3,2,1,1.0,1,1.6,Moderate
+2285,Default,wave3,15,1,6,6.0,ok,1,2,1,1.0,0,1.0,Low
+2288,Default,wave1,7,2,39,19.5,ok,2,2,2,3.0,2,2.2,Moderate
+2291,Extremely Risk-Seeking,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2293,Somewhat Risk-Seeking,wave3,15,1,17,17.0,ok,2,2,1,2.0,0,1.4,Moderate
+2300,Somewhat Risk-Seeking,wave3,15,4,27,6.75,ok,1,1,2,2.0,2,1.6,Moderate
+2301,Default,wave1,7,1,11,11.0,ok,1,1,1,1.0,0,0.8,Low
+2303,Extremely Risk-Seeking,wave3,15,1,9,9.0,ok,1,1,1,1.0,0,0.8,Low
+2305,Extremely Risk-Seeking,wave1,7,2,14,7.0,ok,2,2,1,1.0,1,1.4,Moderate
+2307,Somewhat Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2310,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2312,Extremely Risk-Averse,wave1,7,1,21,21.0,ok,2,2,1,2.0,0,1.4,Moderate
+2314,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2316,Somewhat Risk-Seeking,wave3,15,3,68,22.666666666666668,ok,3,3,2,3.0,2,2.6,High
+2317,Somewhat Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2318,Default,wave3,15,2,41,20.5,ok,3,3,2,2.0,1,2.2,Moderate
+2322,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2325,Default,wave2,12,1,10,10.0,ok,1,1,1,1.0,0,0.8,Low
+2328,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2330,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2331,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2332,Somewhat Risk-Seeking,wave3,15,1,20,20.0,ok,2,2,2,1.0,1,1.6,Moderate
+2333,Default,wave3,15,2,32,16.0,ok,3,2,1,2.0,1,1.8,Moderate
+2336,Risk-Neutral,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2337,Default,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2338,Default,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2342,Somewhat Risk-Seeking,wave3,15,1,8,8.0,ok,1,1,1,1.0,0,0.8,Low
+2344,Somewhat Risk-Averse,wave1,5,0,0,,no_followup,0,0,0,,0,0.0,
+2347,Extremely Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2348,Extremely Risk-Averse,wave2,12,1,12,12.0,ok,1,2,2,1.0,1,1.4,Low
+2349,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2358,Default,wave3,15,2,9,4.5,ok,1,1,3,3.0,2,2.0,Moderate
+2361,Somewhat Risk-Averse,wave1,7,0,0,,no_followup,0,0,0,,0,0.0,
+2362,Extremely Risk-Seeking,wave2,12,4,70,17.5,ok,3,3,2,1.0,2,2.2,Moderate
+2367,Risk-Neutral,wave3,15,1,42,42.0,ok,2,2,2,2.0,1,1.8,Moderate
+2369,Extremely Risk-Averse,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2372,Risk-Neutral,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2374,Somewhat Risk-Averse,wave1,7,1,21,21.0,ok,2,2,1,1.0,1,1.4,Moderate
+2376,Somewhat Risk-Seeking,wave3,15,1,19,19.0,ok,2,2,1,1.0,0,1.2,Moderate
+2378,Default,wave3,15,4,25,6.25,ok,3,2,2,2.0,1,2.0,Moderate
+2380,Default,wave3,15,1,24,24.0,ok,2,3,2,2.0,0,1.8,Moderate
+2383,Extremely Risk-Seeking,wave1,7,1,27,27.0,ok,2,2,2,2.0,1,1.8,Moderate
+2386,Somewhat Risk-Averse,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2388,Somewhat Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2389,Extremely Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2392,Extremely Risk-Averse,wave3,15,2,84,42.0,ok,3,3,2,3.0,3,2.8,High
+2395,Somewhat Risk-Averse,wave2,12,2,15,7.5,ok,2,1,1,1.0,0,1.0,Low
+2400,Somewhat Risk-Averse,wave3,15,1,5,5.0,ok,1,1,1,0.0,0,0.6,Low
+2401,Extremely Risk-Seeking,wave3,15,4,78,19.5,ok,3,3,2,3.0,2,2.6,High
+2402,Somewhat Risk-Seeking,wave2,12,1,11,11.0,ok,1,1,1,1.0,0,0.8,Low
+2403,Somewhat Risk-Seeking,wave3,15,0,0,,no_followup,0,0,0,,0,0.0,
+2405,Extremely Risk-Seeking,wave2,12,0,0,,no_followup,0,0,0,,0,0.0,
+2406,Extremely Risk-Averse,wave1,7,1,59,59.0,ok,2,3,3,3.0,2,2.6,High
+2407,Default,wave3,15,2,22,11.0,ok,3,2,2,2.0,1,2.0,Moderate
+2408,Somewhat Risk-Averse,wave1,7,1,12,12.0,ok,2,1,2,1.0,1,1.4,Moderate
