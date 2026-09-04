@@ -1,15 +1,19 @@
 # Define columns to keep for both dataframes
+# NOTE: BiasedType dropped — single_ai_processed does not have it, and it is not
+# used downstream. The Biased/Default split is derived from AIStanceLabel_S below.
 columns_to_keep_1 <- c("PerceivedImproveCode", "PostPerformance", "PrePerformance",
-                       "NID", "UStanceLabel", "AIStanceLabel_S", "UID", "BiasedType",
+                       "NID", "UStanceLabel", "AIStanceLabel_S", "UID",
                        "UStanceLabel_S", "ConvLength", "PoliBias", "AICorrectness",
                        "PostCorrect", "PreCorrect", "PostConfCode", "PreConfCode",
                        "AIInterMean", "UIdeo", "EngagementBehavioral",
                        "EngagementCognitive", "EngagementEmotional",
-                       "EngagementAutonomy", "EngagementSocialPresence", 
-                       "PerceivedAIRole", "BiasedType")
+                       "EngagementAutonomy", "EngagementSocialPresence",
+                       "PerceivedAIRole")
 
+# NOTE: AI_Combo_Numeric dropped — it is not produced by any R preprocessing (it came
+# from a notebook-enriched df2) and is unused here; the dual split uses the stance codes.
 columns_to_keep_2 <- c("PerceivedImproveCode", "PostPerformance", "PrePerformance",
-                       "NID", "UStanceLabel", "UID", "AI_Combo_Numeric", "BiasedType",
+                       "NID", "UStanceLabel", "UID",
                        "AI1StanceCode", "AI2StanceCode", "UStanceCode", "ConvLength",
                        "PoliBias", "AI1StanceLabel_S", "AI2StanceLabel_S",
                        "AI1Correctness", "AI2Correctness", "AIInterMean",
@@ -17,16 +21,18 @@ columns_to_keep_2 <- c("PerceivedImproveCode", "PostPerformance", "PrePerformanc
                        "EngagementBehavioral",
                        "EngagementCognitive", "EngagementEmotional",
                        "EngagementAutonomy", "EngagementSocialPresence",
-                       "PerceivedAIRole", "BiasedType")
+                       "PerceivedAIRole")
 
 # 1. Process single_ai_processed data
 single_ai_data <- single_ai_processed %>%
-  dplyr::select(all_of(columns_to_keep_1)) %>%
+  dplyr::select(all_of(unique(columns_to_keep_1))) %>%
   mutate(
     ExperimentType = case_when(
-      # Non-Biased cases
+      # Default cases
       AIStanceLabel_S == "Default" ~ "Single_AI_Non_Biased",
-      BiasedType == "Biased" ~ "Single_AI_Biased",
+      # Biased = any partisan single-AI arm. Derived from AIStanceLabel_S because
+      # single_ai_processed has no BiasedType (and BiasedType is now Default/Rep/Dem).
+      AIStanceLabel_S %in% c("Republican", "Democrat") ~ "Single_AI_Biased",
       # AIStanceLabel_S == "Neutral" ~ "Single_AI_Non_Biased_Exp",
       # Balanced: User and AI on opposite political sides
       # (UStanceLabel_S == "Democrat" & AIStanceLabel_S == "Republican") |
@@ -40,13 +46,18 @@ single_ai_data <- single_ai_data[single_ai_data$ExperimentType != "Single_AI_Oth
 single_ai_data$AI1Correctness <- single_ai_data$AICorrectness
 single_ai_data$AI2Correctness <- single_ai_data$AICorrectness
 
+# Build the enriched dual-AI frame from df2 with the dual preprocessing function
+# (parallel to single_ai_processed <- process_single_ai_data(df1)). This adds
+# PostPerformance/PrePerformance, AI1/AI2StanceCode, UStanceCode, AI1/AI2StanceLabel_S.
+# Assumes df2 already carries the engagement/conversation columns, as df1 does.
+df2_filled <- process_dual_ai_data(df2)
+
 # 2. Process df2 data
 dual_ai_data <- df2_filled %>%
-  dplyr::select(all_of(columns_to_keep_2)) %>%
-  rename(AIStanceLabel_S = AI_Combo_Numeric) %>%
+  dplyr::select(all_of(unique(columns_to_keep_2))) %>%
   mutate(
     ExperimentType = case_when(
-      # Non-Biased cases
+      # Default cases
       AI1StanceLabel_S == "Default" & AI2StanceLabel_S == "Default" ~ "Dual_AI_Non_Biased",
       # AI1StanceLabel_S == "Neutral" & AI2StanceLabel_S == "Neutral" ~ "Dual_AI_Non_Biased_Exp",
       # Balanced: User stance is between AI1 and AI2 stances
@@ -66,6 +77,9 @@ dual_ai_data <- dual_ai_data[dual_ai_data$ExperimentType != "Dual_AI_Other", ]
 dual_ai_data$AICorrectness <- (dual_ai_data$AI1Correctness + dual_ai_data$AI2Correctness)/2
 
 # 3. Combine all data
+# AIStanceLabel_S exists only on the single side (a text label used above); the dual
+# side no longer carries it, so bind_rows just fills NA for dual rows. Not used
+# downstream -- the models/plots key off ExperimentType.
 combined_data <- bind_rows(
   single_ai_data,
   dual_ai_data
@@ -113,7 +127,12 @@ model_full_mixed <- lmer(
 summary(model_full_mixed)
 summary(model_full_mixed)$sigma
 df.residual(model_full_mixed)
-r2(model_full_mixed)
+performance::r2(model_full_mixed)   # namespaced: fixest::r2 masks performance::r2
+
+# emmeans df limits: with a few thousand observations the defaults (3000) disable df
+# computation, which renames CI columns to asymp.LCL/asymp.UCL and the test stat to
+# z.ratio -- breaking the rename()s below. Raise the limits (Satterthwaite = fast, finite df).
+emm_options(lmer.df = "satterthwaite", lmerTest.limit = 20000, pbkrtest.limit = 20000)
 
 # Get estimated marginal means for ExperimentType
 # emmeans automatically averages over the other covariates in the model
@@ -132,11 +151,11 @@ plot_data <- plot_data %>%
 
 # Create formal labels
 plot_data$formal_label <- case_when(
-  plot_data$treatments == "Single_AI_Non_Biased" ~ "Single AI\nNon-Biased",
+  plot_data$treatments == "Single_AI_Non_Biased" ~ "Single AI\nDefault",
   plot_data$treatments == "Single_AI_Biased" ~ "Single AI\nBiased",
   # plot_data$treatments == "Single_AI_Non_Biased_Exp" ~ "Single AI\nNeutralized",
   # plot_data$treatments == "Single_AI_Opposition" ~ "Single AI\nOpposition",
-  plot_data$treatments == "Dual_AI_Non_Biased" ~ "Dual AI\nNon-Biased",
+  plot_data$treatments == "Dual_AI_Non_Biased" ~ "Dual AI\nDefault",
   # plot_data$treatments == "Dual_AI_Non_Biased_Exp" ~ "Dual AI\nNeutralized",
   plot_data$treatments == "Dual_AI_Opposition" ~ "Dual AI\nOpposition",
   plot_data$treatments == "Dual_AI_Balanced" ~ "Dual AI\nBalanced",
@@ -144,11 +163,11 @@ plot_data$formal_label <- case_when(
 )
 
 plot_data$formal_label <- factor(plot_data$formal_label, 
-                                 levels = c("Single AI\nNon-Biased",
+                                 levels = c("Single AI\nDefault",
                                             "Single AI\nBiased",
                                             # "Single AI\nNeutralized",
                                             # "Single AI\nOpposition",
-                                            "Dual AI\nNon-Biased",
+                                            "Dual AI\nDefault",
                                             # "Dual AI\nNeutralized",
                                             "Dual AI\nOpposition",
                                             "Dual AI\nBalanced"))

@@ -46,7 +46,7 @@ gaps_df <- data.frame(
 
 # Also create the wide format for compatibility
 bias_gaps_wide <- performance_by_group %>%
-  select(BiasSide, PoliBias, MeanImprovement) %>%
+  dplyr::select(BiasSide, PoliBias, MeanImprovement) %>%
   pivot_wider(names_from = PoliBias, values_from = MeanImprovement) %>%
   left_join(gaps_df, by = "BiasSide")
 
@@ -182,7 +182,7 @@ print(p_avg_abs_bias)
 
 # Create summary table for average absolute political bias
 summary_avg_bias <- avg_abs_bias %>%
-  select(BiasSide, Avg_Abs_Political_Bias, Avg_Abs_SE) %>%
+  dplyr::select(BiasSide, Avg_Abs_Political_Bias, Avg_Abs_SE) %>%
   mutate(
     Avg_Abs_Political_Bias = round(Avg_Abs_Political_Bias, 4),
     Avg_Abs_SE = round(Avg_Abs_SE, 4),
@@ -190,7 +190,7 @@ summary_avg_bias <- avg_abs_bias %>%
     CI_95_upper = round(Avg_Abs_Political_Bias + Avg_Abs_SE * t_95, 4),
     CI_95 = paste0("[", pmax(0, CI_95_lower), ", ", CI_95_upper, "]")
   ) %>%
-  select(BiasSide, Avg_Abs_Political_Bias, Avg_Abs_SE, CI_95)
+  dplyr::select(BiasSide, Avg_Abs_Political_Bias, Avg_Abs_SE, CI_95)
 
 cat("\n=== AVERAGE ABSOLUTE POLITICAL BIAS SUMMARY ===\n")
 print(summary_avg_bias)
@@ -210,7 +210,7 @@ if(bias_difference > 0) {
 # Show the individual components that make up the average
 cat("\n=== COMPONENT GAPS (for reference) ===\n")
 component_table <- gaps_df %>%
-  select(BiasSide, Rep_vs_Dem_Gap, Rep_vs_Neutral_Gap, Dem_vs_Neutral_Gap) %>%
+  dplyr::select(BiasSide, Rep_vs_Dem_Gap, Rep_vs_Neutral_Gap, Dem_vs_Neutral_Gap) %>%
   mutate(
     Rep_vs_Dem_Gap = round(Rep_vs_Dem_Gap, 4),
     Rep_vs_Neutral_Gap = round(Rep_vs_Neutral_Gap, 4),

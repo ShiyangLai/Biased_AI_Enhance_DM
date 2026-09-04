@@ -19,7 +19,7 @@ labeled <- single_ai_processed_ %>%
 
 ## Proportion of each outcome in Biased vs Non-Biased groups
 props <- labeled %>%
-  filter(category != "No shift") %>%      # focus on the four substantive outcomes
+  dplyr::filter(category != "No shift") %>%      # focus on the four substantive outcomes
   count(BiasedType, category) %>%
   group_by(BiasedType) %>%
   mutate(prop = n / sum(n)) %>%

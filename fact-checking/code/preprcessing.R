@@ -63,7 +63,7 @@ calculate_adjusted_evaluations <- function(df) {
       
       # Performance metrics
       PrePerformance = 1 - HumanPreError,  
-      PostPerformance = 1 - HumanPost,
+      PostPerformance = 1 - HumanPostError,
       PerformanceChange = PostPerformance - PrePerformance
     )
 }
@@ -134,12 +134,12 @@ process_single_ai_data <- function(df) {
   
   # Create the baseline for Default AI cases
   default_cases <- df_processed %>%
-    filter(AIStanceLabel_S %in% c("Default")) %>%
+    dplyr::filter(AIStanceLabel_S %in% c("Default")) %>%
     mutate(StanceRelationship = "Baseline")
   
   # Categorize non-Default cases based on stance relationships
   non_default_cases <- df_processed %>%
-    filter(AIStanceLabel_S != "Default") %>%
+    dplyr::filter(AIStanceLabel_S != "Default") %>%
     mutate(
       # Calculate stance relationships
       StanceDistance = abs(UStanceCode - AIStanceCode),
@@ -180,12 +180,12 @@ process_dual_ai_data <- function(df) {
   
   # Create the baseline for Default-Default AI cases
   default_default_cases <- df_processed %>%
-    filter(AI1StanceLabel_S == "Default" & AI2StanceLabel_S == "Default") %>%
+    dplyr::filter(AI1StanceLabel_S == "Default" & AI2StanceLabel_S == "Default") %>%
     mutate(StanceRelationship = "Baseline")
   
   # Categorize non-Default-Default cases based on stance relationships
   non_default_cases <- df_processed %>%
-    filter(!(AI1StanceLabel_S == "Default" & AI2StanceLabel_S == "Default")) %>%
+    dplyr::filter(!(AI1StanceLabel_S == "Default" & AI2StanceLabel_S == "Default")) %>%
     mutate(
       # Distance between user and each AI
       StanceDistance_AI1 = abs(UStanceCode - AI1StanceCode),
@@ -245,11 +245,22 @@ process_dual_ai_data <- function(df) {
 
 
 # Read the single AI assistant data
-df1 <- read.csv("../Data/encrypted_ai1.csv")
+df1 <- read.csv("../data/encrypted_ai1.csv")
+
+# Blank strings ("") in character covariates are NOT read as NA by read.csv;
+# left as-is, "" sorts first and becomes a phantom factor reference level in
+# models (e.g. UIdeo: 6 such rows), silently inflating every emmean SE and
+# shifting the marginal means. Convert to NA so complete-case filters drop them.
+df1$UIdeo[df1$UIdeo == ""] <- NA
+df1$URace[df1$URace == ""] <- NA
 
 # Process the data for single AI
 single_ai_processed <- process_single_ai_data(df1)
 
 # Read the dual AI assistants data
-df2 <- read.csv("../Data/encrypted_ai2.csv")
+df2 <- read.csv("../data/encrypted_ai2.csv")
+
+# Same blank-string fix for the dual file (36 blank UIdeo cells)
+df2$UIdeo[df2$UIdeo == ""] <- NA
+df2$URace[df2$URace == ""] <- NA
 

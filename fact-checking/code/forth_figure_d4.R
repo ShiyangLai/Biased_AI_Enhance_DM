@@ -1,40 +1,40 @@
 # 1. Process single_ai_processed data
+# Arms match forth_figure_d1.R: Default -> Non_Biased, partisan -> Biased.
+# (Derived from AIStanceLabel_S; single_ai_processed has no BiasedType column.)
 single_ai_data <- single_ai_processed %>%
-  dplyr::select(all_of(columns_to_keep_1)) %>%
+  dplyr::select(all_of(unique(columns_to_keep_1))) %>%
   mutate(
     ExperimentType = case_when(
-      # Non-Biased cases
       AIStanceLabel_S == "Default" ~ "Single_AI_Non_Biased",
-      AIStanceLabel_S == "Neutral" ~ "Single_AI_Non_Biased_Exp",
-      # Balanced: User and AI on opposite political sides
-      (UStanceLabel_S == "Democrat" & AIStanceLabel_S == "Republican") |
-        (UStanceLabel_S == "Republican" & AIStanceLabel_S == "Democrat") ~ "Single_AI_Opposition",
-      # All other cases
-      TRUE ~ "Single_AI_Echo_Chamber"
+      AIStanceLabel_S %in% c("Republican", "Democrat") ~ "Single_AI_Biased",
+      # Everything else (e.g. Neutral) is dropped below
+      TRUE ~ "Single_AI_Other"
     )
   )
 
-single_ai_data <- single_ai_data[single_ai_data$ExperimentType != "Single_AI_Echo_Chamber", ]
+single_ai_data <- single_ai_data[single_ai_data$ExperimentType != "Single_AI_Other", ]
 single_ai_data$AI1Correctness <- single_ai_data$AICorrectness
 single_ai_data$AI2Correctness <- single_ai_data$AICorrectness
 
 # 2. Process df2 data
-dual_ai_data <- df2 %>%
-  dplyr::select(all_of(columns_to_keep_2)) %>%
-  rename(AIStanceLabel_S = AI_Combo_Numeric) %>%
+# df2 is the RAW dual-AI frame. process_dual_ai_data() adds PostPerformance,
+# PrePerformance, AI1/AI2StanceCode, UStanceCode, AI1/AI2StanceLabel_S.
+df2_filled <- process_dual_ai_data(df2)
+
+dual_ai_data <- df2_filled %>%
+  dplyr::select(all_of(unique(columns_to_keep_2))) %>%
   mutate(
     ExperimentType = case_when(
-      # Non-Biased cases
+      # Default cases
       AI1StanceLabel_S == "Default" & AI2StanceLabel_S == "Default" ~ "Dual_AI_Non_Biased",
-      AI1StanceLabel_S == "Neutral" & AI2StanceLabel_S == "Neutral" ~ "Dual_AI_Non_Biased_Exp",
       # Balanced: User stance is between AI1 and AI2 stances
       AI1StanceCode != AI2StanceCode &
         UStanceCode > pmin(AI1StanceCode, AI2StanceCode) &
         UStanceCode < pmax(AI1StanceCode, AI2StanceCode) ~ "Dual_AI_Balanced",
-      # Opposition: User stance is different from the two AI stances direction
-      (UStanceCode != 0) & 
+      # Opposition: both AIs oppose the user's direction
+      (UStanceCode != 0) &
         (AI1StanceCode != 0) & (AI2StanceCode != 0) &
-        (sign(AI1StanceCode) == -sign(UStanceCode)) & 
+        (sign(AI1StanceCode) == -sign(UStanceCode)) &
         (sign(AI2StanceCode) == -sign(UStanceCode)) ~ "Dual_AI_Opposition",
       TRUE ~ "Dual_AI_Other"
     )
@@ -44,6 +44,7 @@ dual_ai_data <- dual_ai_data[dual_ai_data$ExperimentType != "Dual_AI_Other", ]
 dual_ai_data$AICorrectness <- (dual_ai_data$AI1Correctness + dual_ai_data$AI2Correctness)/2
 
 # 3. Combine all data
+# AIStanceLabel_S exists only on the single side; dual rows get NA. Not used downstream.
 combined_data <- bind_rows(
   single_ai_data,
   dual_ai_data
@@ -68,8 +69,12 @@ print(table(combined_data$ExperimentType))
 print("\nCross-tabulation of ExperimentType by User Stance:")
 print(table(combined_data$ExperimentType, combined_data$UStanceLabel, useNA = "ifany"))
 
-print("\nBreakdown by BiasedType within each ExperimentType:")
-print(table(combined_data$ExperimentType, combined_data$BiasedType, useNA = "ifany"))
+# BiasedType is no longer carried in columns_to_keep_* (and single_ai_processed
+# lacks it), so only print this breakdown if the column happens to be present.
+if ("BiasedType" %in% names(combined_data)) {
+  print("\nBreakdown by BiasedType within each ExperimentType:")
+  print(table(combined_data$ExperimentType, combined_data$BiasedType, useNA = "ifany"))
+}
 
 model_full <- lm(
   ConvLength ~ ExperimentType + PrePerformance +
@@ -98,11 +103,17 @@ model_full_mixed <- lmer(
 summary(model_full_mixed)
 summary(model_full_mixed)$sigma
 df.residual(model_full_mixed)
-r2(model_full_mixed)
+performance::r2(model_full_mixed)   # fixest::r2 masks performance::r2 when fixest is loaded
 
 # =====================================
 # Visualization
 # =====================================
+
+# emmeans df limits: combined_data now exceeds 3000 rows, at which point emmeans
+# disables df computation and renames its columns (lower.CL/upper.CL ->
+# asymp.LCL/asymp.UCL, t.ratio -> z.ratio), breaking every rename() below.
+# Raise the limits (Satterthwaite = fast, finite df) BEFORE the first emmeans call.
+emm_options(lmer.df = "satterthwaite", lmerTest.limit = 20000, pbkrtest.limit = 20000)
 
 # Get estimated marginal means for ExperimentType
 emm_results <- emmeans(model_full_mixed, ~ ExperimentType)
@@ -120,11 +131,11 @@ plot_data <- plot_data %>%
 
 # Create formal labels
 plot_data$formal_label <- case_when(
-  plot_data$treatments == "Single_AI_Non_Biased" ~ "Single AI\nNon-Biased",
+  plot_data$treatments == "Single_AI_Non_Biased" ~ "Single AI\nDefault",
   plot_data$treatments == "Single_AI_Biased" ~ "Single AI\nBiased",
   # plot_data$treatments == "Single_AI_Non_Biased_Exp" ~ "Single AI\nNeutralized", 
   # plot_data$treatments == "Single_AI_Opposition" ~ "Single AI\nOpposition",
-  plot_data$treatments == "Dual_AI_Non_Biased" ~ "Dual AI\nNon-Biased",
+  plot_data$treatments == "Dual_AI_Non_Biased" ~ "Dual AI\nDefault",
   # plot_data$treatments == "Dual_AI_Non_Biased_Exp" ~ "Dual AI\nNeutralized",
   plot_data$treatments == "Dual_AI_Opposition" ~ "Dual AI\nOpposition",
   plot_data$treatments == "Dual_AI_Balanced" ~ "Dual AI\nBalanced",
@@ -133,11 +144,11 @@ plot_data$formal_label <- case_when(
 
 # Ensure proper factor ordering for formal labels (reversed for horizontal plot)
 plot_data$formal_label <- factor(plot_data$formal_label, 
-                                 levels = rev(c("Single AI\nNon-Biased",
+                                 levels = rev(c("Single AI\nDefault",
                                                 "Single AI\nBiased",
                                                 # "Single AI\nNeutralized",
                                                 # "Single AI\nOpposition",
-                                                "Dual AI\nNon-Biased",
+                                                "Dual AI\nDefault",
                                                 # "Dual AI\nNeutralized",
                                                 "Dual AI\nOpposition",
                                                 "Dual AI\nBalanced")))
@@ -189,7 +200,7 @@ get_color_for_value <- function(norm_val) {
 plot_data$fill_color <- sapply(plot_data$normalized_value, get_color_for_value)
 
 # Calculate appropriate x-axis limits
-x_min <- min(plot_data$lower_ci) * 0.95
+x_min <- min(plot_data$lower_ci) * 0.8
 x_max <- max(plot_data$upper_ci) * 1.05
 
 # =====================================
@@ -207,6 +218,8 @@ p_horizontal <- ggplot(plot_data, aes(y = formal_label, x = estimate)) +
                 label = round(estimate, 1)), 
             hjust = 0, family = "Avenir", size = 3, color = "black") +
   
+  geom_point(color = "black", size = 2.4, shape = 17) +
+  
   # Use manual fill scale
   scale_fill_identity() +
   
@@ -219,7 +232,7 @@ p_horizontal <- ggplot(plot_data, aes(y = formal_label, x = estimate)) +
   # Use coord_cartesian to set limits
   coord_cartesian(xlim = c(x_min, x_max * 2)) +
   
-  labs(y = "Experimental Condition", 
+  labs(y = "Fact-checking Experimental Condition", 
        x = "Conversation Length") +
   
   theme_classic() +
@@ -227,9 +240,12 @@ p_horizontal <- ggplot(plot_data, aes(y = formal_label, x = estimate)) +
     text = element_text(family = "Avenir", color = "black"),
     panel.border = element_rect(color = "black", fill = NA, linewidth = 0.5),
     axis.line = element_blank(),
-    axis.text.y = element_blank(),
+    axis.text.y = element_text(family = "Avenir", size = 9, color = "black",
+                               margin = margin(r = 5),
+                               angle = 90, hjust = 0.5),
     axis.text.x = element_text(family = "Avenir", size = 9, color = "black"),
-    axis.title.y = element_blank(),
+    axis.title.y = element_text(family = "Avenir", size = 12, color = "black",
+                                margin = margin(r = 12)),
     axis.title.x = element_text(family = "Avenir", size = 12, color = "black",
                                 margin = margin(t = 12)),
     axis.ticks = element_line(color = "black", linewidth = 0.4),
@@ -242,6 +258,7 @@ p_horizontal <- ggplot(plot_data, aes(y = formal_label, x = estimate)) +
   )
 
 print(p_horizontal)
+ggsave("../figures/conversation_length.png", p_horizontal, width = 4, height = 4.5, dpi = 500)
 
 
 
@@ -351,10 +368,52 @@ print(comparisons[, c("Comparison", "Difference", "SE", "t_stat", "p_adj", "Hedg
 
 cat("\n=== DETAILED RESULTS WITH CONFIDENCE INTERVALS ===\n")
 detailed_results <- comparisons %>%
-  select(Comparison, Difference, SE, p_adj, Hedges_g, Hedges_g_Lower, Hedges_g_Upper, Significance) %>%
+  dplyr::select(Comparison, Difference, SE, p_adj, Hedges_g, Hedges_g_Lower, Hedges_g_Upper, Significance) %>%
   arrange(p_adj)
 
 print(detailed_results)
+
+# =====================================
+# Pairwise comparison report (reader-friendly, one line per contrast)
+# =====================================
+# 95% CIs of the differences (pairs() above was not run with infer = TRUE)
+diff_ci <- as.data.frame(confint(pairwise_comparisons)) %>%
+  transmute(Comparison = contrast, diff_lo = lower.CL, diff_hi = upper.CL)
+
+arm_label <- c(
+  Single_AI_Non_Biased = "Single AI Default",
+  Single_AI_Biased     = "Single AI Biased",
+  Dual_AI_Non_Biased   = "Dual AI Default",
+  Dual_AI_Opposition   = "Dual AI Opposition",
+  Dual_AI_Balanced     = "Dual AI Balanced"
+)
+pretty_contrast <- function(x) {
+  parts <- trimws(strsplit(as.character(x), " - ")[[1]])
+  paste(ifelse(parts %in% names(arm_label), arm_label[parts], parts), collapse = " vs. ")
+}
+g_size <- function(g) ifelse(abs(g) < 0.2, "negligible",
+                      ifelse(abs(g) < 0.5, "small",
+                      ifelse(abs(g) < 0.8, "medium", "large")))
+
+report <- comparisons %>%
+  left_join(diff_ci, by = "Comparison") %>%
+  arrange(p_adj)
+
+cat("\n=== PAIRWISE COMPARISON REPORT (conversation length) ===\n")
+cat("Mixed-effects marginal means; p-values FDR-adjusted across all",
+    nrow(report), "contrasts.\n\n")
+for (i in seq_len(nrow(report))) {
+  r <- report[i, ]
+  cat(sprintf("%s:\n  diff = %.2f turns, 95%% CI [%.2f, %.2f], t(%.0f) = %.2f, p_FDR = %.4f %s\n  Hedges' g = %.3f [%.3f, %.3f] (%s)\n\n",
+              pretty_contrast(r$Comparison),
+              r$Difference, r$diff_lo, r$diff_hi, r$df, r$t_stat, r$p_adj, r$Significance,
+              r$Hedges_g, r$Hedges_g_Lower, r$Hedges_g_Upper, g_size(r$Hedges_g)))
+}
+sig_n <- sum(report$p_adj < 0.05)
+cat(sprintf("Summary: %d of %d pairwise contrasts significant at p_FDR < .05: %s\n",
+            sig_n, nrow(report),
+            if (sig_n) paste(sapply(report$Comparison[report$p_adj < 0.05], pretty_contrast),
+                             collapse = "; ") else "(none)"))
 
 # =====================================
 # Summary statistics
@@ -372,6 +431,13 @@ cat("Small+ effect sizes (|g| ≥ 0.2):", sum(abs(comparisons$Hedges_g) >= 0.2),
 # =====================================
 
 cat("\n=== EFFECT SIZE DISTRIBUTION ===\n")
+# Effect_Size is a display label over Hedges' g (Cohen's conventional cut-offs);
+# it is referenced below but was never constructed. Derived here so the summary
+# block runs; no estimate or test is affected.
+comparisons$Effect_Size <- cut(abs(comparisons$Hedges_g),
+                               breaks = c(-Inf, 0.2, 0.5, 0.8, Inf),
+                               labels = c("negligible", "small", "medium", "large"),
+                               right = FALSE)
 effect_size_table <- table(comparisons$Effect_Size)
 print(effect_size_table)
 
@@ -383,10 +449,10 @@ cat("\nHedges' g range: [", round(min(comparisons$Hedges_g), 3), ", ", round(max
 
 cat("\n=== TOP 5 SIGNIFICANT DIFFERENCES ===\n")
 top_significant <- comparisons %>%
-  filter(p_adj < 0.05) %>%
+  dplyr::filter(p_adj < 0.05) %>%
   arrange(p_adj) %>%
   head(5) %>%
-  select(Comparison, Difference, p_adj, Hedges_g, Effect_Size)
+  dplyr::select(Comparison, Difference, p_adj, Hedges_g, Effect_Size)
 
 if(nrow(top_significant) > 0) {
   print(top_significant)
@@ -402,7 +468,7 @@ cat("\n=== TOP 5 LARGEST EFFECT SIZES ===\n")
 top_effects <- comparisons %>%
   arrange(desc(abs(Hedges_g))) %>%
   head(5) %>%
-  select(Comparison, Difference, Hedges_g, Effect_Size, p_adj, Significance)
+  dplyr::select(Comparison, Difference, Hedges_g, Effect_Size, p_adj, Significance)
 
 print(top_effects)
 
@@ -684,7 +750,7 @@ if(nrow(engagement_results) > 0) {
   
   # Calculate means for each ExperimentType and dimension
   engagement_means <- combined_data %>%
-    select(ExperimentType, all_of(dimensions)) %>%
+    dplyr::select(ExperimentType, all_of(dimensions)) %>%
     pivot_longer(cols = all_of(dimensions), names_to = "Dimension_raw", values_to = "Score") %>%
     mutate(
       Dimension = case_when(

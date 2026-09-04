@@ -1,6 +1,6 @@
 repdem_single_ai <- single_ai_processed_ %>%
-  filter(
-    (UStanceLabel_S != "Independent") & (BiasedType == "Biased")
+  dplyr::filter(
+    (UStanceLabel_S != "Independent") & (BiasedType != "Default")
   )
 
 repdem_single_ai$BiasSide <- ifelse(((repdem_single_ai$AIStanceLabel_S == "Republican") &
@@ -13,7 +13,11 @@ repdem_single_ai$BiasSide <-factor(repdem_single_ai$BiasSide, levels = c("Same",
 
 repdem_single_ai$PerceivedImproveCode <- as.numeric(repdem_single_ai$PerceivedImproveCode)
 
-per_model <- lm(PostPerformance ~ BiasSide + PrePerformance + as.factor(NID) + UStanceLabel +
+# BiasSide * UStanceLabel_S = echo/opposition crossed with the user's party
+# (Rep/Dem). This gives the four echo-chamber/opposition combination cells and
+# lets the interaction be estimated. The separate `UStanceLabel` main effect is
+# dropped: user party is already carried by UStanceLabel_S in the interaction.
+per_model <- lm(PostPerformance ~ BiasSide * UStanceLabel_S + PrePerformance + as.factor(NID) +
                   UIdeo + AICorrectness,
                   data = repdem_single_ai)
 summary(per_model)
@@ -21,18 +25,28 @@ vcov_per <- vcovCL(per_model, cluster = repdem_single_ai$UID)
 clustered_results_per <- coeftest(per_model, vcov = vcov_per)
 print(clustered_results_per)
 df.residual(per_model)
-r2(per_model)
+performance::r2(per_model)
 
-per_model <- lmer(PostPerformance ~ BiasSide + PrePerformance + as.factor(NID) + 
-                    (1|UID) + UStanceLabel + UIdeo + AICorrectness,
+per_model <- lmer(PostPerformance ~ BiasSide * UStanceLabel_S + PrePerformance + as.factor(NID) +
+                    (1|UID) + UIdeo + AICorrectness,
                         data = repdem_single_ai)
 summary(per_model)
 summary(per_model)$sigma
 df.residual(per_model)
-r2(per_model)
+performance::r2(per_model)
 
+# Four combination cells (echo/opposition x Rep/Dem user)
 emm_full <- emmeans(per_model, ~ BiasSide * UStanceLabel_S)
-interaction_test_custom <- contrast(emm_full, 
+print("Estimated marginal means (echo/opposition x user party):")
+print(emm_full)
+
+# Simple effect: echo (Same) vs opposition (Opposite) WITHIN each user party
+simple_by_party <- contrast(emm_full, "pairwise", by = "UStanceLabel_S", adjust = "fdr")
+print("Echo vs Opposition within each user party:")
+print(simple_by_party)
+
+# Interaction: does the echo-vs-opposition effect differ between Rep and Dem users?
+interaction_test_custom <- contrast(emm_full,
                                     interaction = c("pairwise", "pairwise"),
                                     adjust = "fdr")
 print("Custom interaction contrasts:")
@@ -166,7 +180,7 @@ color_lower <- "#90EE90"   # Light green for lower value
 
 
 # Calculate degrees of freedom and t-values for different confidence levels
-df_bias <- df_clustered  # Use clustered df
+df_bias <- df.residual(per_model)  # was `df_clustered`, which is never defined
 t_90 <- qt(0.95, df_bias)   # 90% CI
 t_95 <- qt(0.975, df_bias)  # 95% CI
 t_99 <- qt(0.995, df_bias)  # 99% CI
@@ -213,29 +227,29 @@ emm_bias_multi <- emm_bias_multi %>%
 #  Define color for bars
 color_bias <- "#228B22"  # Sea green
 
-# Create the bar plot with 95% CI error bars
-p_bias_side <- ggplot(emm_bias_df, aes(x = BiasSide, y = emmean)) +
+# Create the horizontal bar plot with 95% CI error bars
+p_bias_side <- ggplot(emm_bias_df, aes(y = BiasSide, x = emmean)) +
   geom_col(fill = color_bias, alpha = 0.7, width = 0.6) +
-  geom_errorbar(aes(ymin = lower.CL, ymax = upper.CL), 
+  geom_errorbar(aes(xmin = lower.CL, xmax = upper.CL),
                 width = 0.2, color = "black", linewidth = 0.6) +
-  geom_point(shape = 20, 
+  geom_point(shape = 15,
              size = 3, color = "black", fill = "white") +
-  geom_text(aes(y = upper.CL + max(upper.CL, na.rm = TRUE) * 0.02, 
-                label = round(emmean, 3)), 
-            size = 3.7, family = "Avenir") +
-  scale_y_continuous(
+  geom_text(aes(x = upper.CL + max(upper.CL, na.rm = TRUE) * 0.02,
+                label = round(emmean, 3)),
+            hjust = 0, size = 3.7, family = "Avenir") +
+  scale_x_continuous(
     name = "Post-Interaction Performance",
     labels = scales::number_format(accuracy = 0.01),
     limits = c(0, max(emm_bias_df$upper.CL) * 1.05),
     expand = c(0, 0)
   ) +
-  
-  scale_x_discrete(
+
+  scale_y_discrete(
     name = "AI Bias Direction",
     labels = c("Opposite" = "Opposition Bias", "Same" = "Echo-Chamber Bias")
   ) +
-  
-  coord_cartesian(ylim = c(0.5, .8)) +
+
+  coord_cartesian(xlim = c(0.5, .8)) +
   
   theme_classic() +
   theme(
@@ -245,7 +259,7 @@ p_bias_side <- ggplot(emm_bias_df, aes(x = BiasSide, y = emmean)) +
     axis.title.x = element_text(family = "Avenir", size = 12, margin = margin(t = 12)),
     axis.title.y = element_text(family = "Avenir", size = 12, color = "black", margin = margin(r = 12)),
     axis.text.x = element_text(family = "Avenir", size = 10, color = "black"),
-    axis.text.y = element_text(family = "Avenir", size = 10, color = "black"),
+    axis.text.y = element_text(family = "Avenir", size = 10, color = "black", angle = 90, hjust = 0.5),
     axis.ticks = element_line(color = "black", linewidth = 0.4),
     axis.ticks.length = unit(3, "pt"),
     panel.background = element_rect(fill = "white"),
@@ -258,3 +272,65 @@ p_bias_side <- ggplot(emm_bias_df, aes(x = BiasSide, y = emmean)) +
 # Display the plot
 print(p_bias_side)
 
+# =============================================================================
+# Visualization: echo/opposition x user party (the four combination cells)
+# =============================================================================
+emm_full_df <- as.data.frame(emm_full)
+
+# Party colors for the user's party (Republican = red, Democrat = blue)
+party_colors <- c("Republican" = "#E15759", "Democrat" = "#4E79A7")
+
+# Reference: average post-interaction performance in the Default AI arm.
+# (repdem_single_ai excludes Default, so compute it from single_ai_processed_;
+# raw mean, since Default rows are not in per_model.)
+default_avg <- mean(
+  single_ai_processed_$PostPerformance[single_ai_processed_$BiasedType == "Default"],
+  na.rm = TRUE
+)
+cat(sprintf("Default AI arm mean PostPerformance (reference line): %.3f\n", default_avg))
+
+dodge <- position_dodge(width = 0.7)
+
+p_bias_party <- ggplot(emm_full_df,
+                       aes(y = BiasSide, x = emmean,
+                           fill = UStanceLabel_S, group = UStanceLabel_S)) +
+  geom_col(position = dodge, width = 0.6, alpha = 0.85) +
+  # Default AI treatment average as reference
+  geom_vline(xintercept = default_avg, linetype = "dashed",
+             color = "gray70", linewidth = 0.5) +
+  geom_errorbar(aes(xmin = lower.CL, xmax = upper.CL),
+                position = dodge, width = 0.2, color = "black", linewidth = 0.6) +
+  geom_text(aes(x = upper.CL + max(upper.CL, na.rm = TRUE) * 0.03,
+                label = round(emmean, 3)),
+            position = dodge, hjust = 0, size = 4., family = "Avenir") +
+  scale_fill_manual(name = "User party", values = party_colors) +
+  scale_x_continuous(
+    name = "Post-Interaction Performance",
+    labels = scales::number_format(accuracy = 0.01)
+  ) +
+  scale_y_discrete(
+    name = "AI Bias Direction",
+    labels = c("Opposite" = "Opposition Bias", "Same" = "Echo-Chamber Bias")
+  ) +
+  coord_cartesian(xlim = c(0.5, 1)) +   # widen if any bar/CI is clipped
+  theme_classic() +
+  theme(
+    text = element_text(family = "Avenir"),
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 0.5),
+    axis.line = element_blank(),
+    axis.title.x = element_text(family = "Avenir", size = 12, margin = margin(t = 12)),
+    axis.title.y = element_text(family = "Avenir", size = 12, color = "black", margin = margin(r = 12)),
+    axis.text.x = element_text(family = "Avenir", size = 10, color = "black"),
+    axis.text.y = element_text(family = "Avenir", size = 10, color = "black", hjust = 0.5, angle = 90),
+    axis.ticks = element_line(color = "black", linewidth = 0.4),
+    axis.ticks.length = unit(3, "pt"),
+    panel.background = element_rect(fill = "white"),
+    plot.background = element_rect(fill = "white"),
+    panel.grid = element_blank(),
+    plot.margin = margin(t = 15, r = 20, b = 15, l = 15),
+    legend.position = "none"
+  )
+
+# Display the 4-cell plot
+print(p_bias_party)
+ggsave("../figures/relative_bias_misinfo.png", p_bias_party, width = 5, height = 5, dpi = 500)

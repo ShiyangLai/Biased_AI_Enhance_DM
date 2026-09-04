@@ -1,3 +1,40 @@
+# ==============================================================================
+# second_figure_b2.R — AI correctness by bias magnitude + perceived AI role.
+# Self-contained: derives every input it needs if not already in the session.
+# ==============================================================================
+library(dplyr)
+library(ggplot2)
+library(scales)     # label_percent, number_format
+library(ordinal)    # clm
+library(sandwich)   # vcovCL
+library(lmtest)     # coeftest
+library(emmeans)
+
+# Base data: single_ai_processed comes from preprcessing.R
+if (!exists("single_ai_processed")) {
+  cat("single_ai_processed not found - sourcing preprcessing.R\n")
+  source("preprcessing.R")
+}
+# Neutral-treatment rows excluded, as elsewhere in the pipeline
+if (!exists("single_ai_processed_")) {
+  single_ai_processed_ <- single_ai_processed[single_ai_processed$AIStanceLabel_S != "Neutral", ]
+}
+
+# Bias-magnitude categories (same rule as second_figure_b1.R; keyed off
+# AIStanceLabel_S because BiasedType now holds Default/Republican/Democrat)
+make_biased_cat <- function(df) {
+  factor(ifelse(df$AIStanceLabel_S == "Default", "Default",
+                ifelse(df$AIStanceLabel %in% c("Strong Republican", "Strong Democrat"),
+                       "Strong Bias", "Moderate Bias")),
+         levels = c("Default", "Moderate Bias", "Strong Bias"))
+}
+single_ai_processed_$BiasedCat <- make_biased_cat(single_ai_processed_)
+if (!exists("complete_data")) {
+  cat("complete_data not found - deriving from single_ai_processed_\n")
+  complete_data <- single_ai_processed_
+}
+complete_data$BiasedCat <- make_biased_cat(complete_data)
+
 # Check available data
 cat("Unique values in BiasedCat:", paste(unique(complete_data$BiasedCat), collapse = ", "), "\n")
 cat("AICorrectness summary:\n")
@@ -5,7 +42,7 @@ print(summary(complete_data$AICorrectness))
 
 # Ensure BiasedCat is properly ordered as a factor
 complete_data$BiasedCat <- factor(complete_data$BiasedCat, 
-                                  levels = c("No Bias", "Moderate Bias", "Strong Bias"))
+                                  levels = c("Default", "Moderate Bias", "Strong Bias"))
 
 # Check the factor levels
 cat("BiasedCat levels:", paste(levels(complete_data$BiasedCat), collapse = ", "), "\n")
@@ -14,9 +51,11 @@ cat("BiasedCat levels:", paste(levels(complete_data$BiasedCat), collapse = ", ")
 model_ai <- lm(AICorrectness ~ BiasedCat + as.factor(NID), 
                data = complete_data)
 
+# Partisan-arm subset (was `BiasedType == "Biased"`, which no longer matches —
+# BiasedType holds Default/Republican/Democrat now)
 model <- clm(
   as.factor(AIStanceLabel_S) ~ AICorrectness + factor(NID),
-  data = subset(complete_data, BiasedType == "Biased")
+  data = subset(complete_data, AIStanceLabel_S %in% c("Republican", "Democrat"))
 )
 
 
@@ -41,7 +80,7 @@ print(emm_ai)
 # Pairwise comparisons between bias categories
 pairwise_ai <- pairs(emm_ai, adjust = "fdr")
 
-cat("\n=== PAIRWISE COMPARISONS (BONFERRONI ADJUSTED) ===\n")
+cat("\n=== PAIRWISE COMPARISONS (FDR ADJUSTED) ===\n")
 print(pairwise_ai)
 
 
@@ -56,7 +95,7 @@ emm_ai_df <- as.data.frame(emm_ai) %>%
     lower_95 = emmean - SE * t_95,
     upper_95 = emmean + SE * t_95,
     # Ensure proper factor ordering
-    BiasedCat = factor(BiasedCat, levels = c("No Bias", "Moderate Bias", "Strong Bias"))
+    BiasedCat = factor(BiasedCat, levels = c("Default", "Moderate Bias", "Strong Bias"))
   )
 
 cat("\n=== AI CORRECTNESS BY BIAS MAGNITUDE ===\n")
@@ -71,7 +110,7 @@ for(i in 1:nrow(emm_ai_df)) {
 
 # Define colors for AI correctness
 ai_colors <- c(
-  "No Bias" = "#4E79A7",       # Blue
+  "Default" = "#4E79A7",       # Blue
   "Moderate Bias" = "#A2688F", # Mauve / muted purple
   "Strong Bias" = "#E15759"    # Red
 )
@@ -91,9 +130,10 @@ p_ai_correctness <- ggplot(emm_ai_df, aes(x = BiasedCat, y = emmean, fill = Bias
             size = 3.5, family = "Arial", color = "black") +
   
   scale_fill_manual(values = ai_colors) +
-  
+
+
   scale_y_continuous(
-    name = "AI Correctness",
+    name = "AI Fact-checking Correctness",
     labels = scales::number_format(accuracy = 0.01),
     expand = expansion(mult = c(0, 0.1))
   ) +
@@ -103,25 +143,16 @@ p_ai_correctness <- ggplot(emm_ai_df, aes(x = BiasedCat, y = emmean, fill = Bias
   ) +
   
   theme_classic() +
-  theme(
-    legend.position = "none",
-    panel.border = element_rect(color = "black", fill = NA, linewidth = 0.8),
-    axis.line = element_blank(),
-    text = element_text(family = "Arial", color = "black"),
-    axis.title.x = element_text(family = "Arial", size = 13.5, margin = margin(t = 12)),
-    axis.title.y = element_text(family = "Arial", size = 13.5, color = "black", margin = margin(r = 10)),
-    axis.text.x = element_text(family = "Arial", size = 11.7, color = "black", margin = margin(t = 4)),
-    axis.text.y = element_text(family = "Arial", size = 11.7, color = "black"),
-    axis.ticks = element_line(color = "black", linewidth = 0.6),
-    axis.ticks.length = unit(3.5, "pt"),
-    panel.background = element_rect(fill = "white"),
-    plot.background = element_rect(fill = "white"),
-    panel.grid = element_blank(),
-    plot.margin = margin(t = 10, r = 10, b = 10, l = 10)
-  )
+  theme(legend.position = c(0.42, 0.98),
+        legend.justification = c(1, 1),
+        legend.background = element_rect(fill = "white", color = NA),
+        legend.margin = margin(4, 4, 4, 4),
+        legend.key = element_rect(fill = "white", color = NA),
+        legend.key.height = unit(0.42, "cm"),
+        legend.text = element_text(family = "Avenir", size = 9.5))
 
-# Display the plot
-print(p_ai_correctness)
+# Display the plot (screen device only; Rscript's default device lacks the fonts)
+if (interactive()) print(p_ai_correctness)
 
 # =====================================
 # Statistical testing summary
@@ -136,7 +167,7 @@ print(anova_result)
 # Convert pairwise results to data frame for easier reading
 pairwise_df <- as.data.frame(pairwise_ai)
 
-cat("\nPairwise Comparisons (Bonferroni Adjusted):\n")
+cat("\nPairwise Comparisons (FDR Adjusted):\n")
 for(i in 1:nrow(pairwise_df)) {
   significance <- ifelse(pairwise_df$p.value[i] < 0.001, "***",
                          ifelse(pairwise_df$p.value[i] < 0.01, "**",
@@ -159,12 +190,12 @@ cat("\nSignificance codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n")
 # =====================================
 cat("\n=== EFFECT SIZE INTERPRETATION ===\n")
 
-# Calculate effect sizes relative to No Bias
-no_bias_est <- emm_ai_df$emmean[emm_ai_df$BiasedCat == "No Bias"]
+# Calculate effect sizes relative to Default
+no_bias_est <- emm_ai_df$emmean[emm_ai_df$BiasedCat == "Default"]
 moderate_est <- emm_ai_df$emmean[emm_ai_df$BiasedCat == "Moderate Bias"]
 strong_est <- emm_ai_df$emmean[emm_ai_df$BiasedCat == "Strong Bias"]
 
-cat("Effect sizes (relative to No Bias baseline):\n")
+cat("Effect sizes (relative to Default baseline):\n")
 cat(sprintf("Moderate Bias effect: %.3f (%.1f%% change)\n", 
             moderate_est - no_bias_est, 
             ((moderate_est - no_bias_est) / no_bias_est) * 100))
@@ -177,7 +208,7 @@ sample_sizes <- complete_data %>%
   group_by(BiasedCat) %>%
   summarise(n = n(), .groups = 'drop') %>%
   mutate(
-    BiasedCat = factor(BiasedCat, levels = c("No Bias", "Moderate Bias", "Strong Bias")),
+    BiasedCat = factor(BiasedCat, levels = c("Default", "Moderate Bias", "Strong Bias")),
     percentage = n / sum(n) * 100
   )
 
@@ -191,8 +222,8 @@ cat("\n=== CREATING AI CORRECTNESS DISTRIBUTION PLOT ===\n")
 
 # Ensure data is properly filtered and ordered
 plot_data <- complete_data %>%
-  filter(!is.na(BiasedCat) & !is.na(AICorrectness)) %>%
-  mutate(BiasedCat = factor(BiasedCat, levels = c("No Bias", "Moderate Bias", "Strong Bias")))
+  dplyr::filter(!is.na(BiasedCat) & !is.na(AICorrectness)) %>%
+  mutate(BiasedCat = factor(BiasedCat, levels = c("Default", "Moderate Bias", "Strong Bias")))
 
 # Print summary statistics for each group
 cat("AI Correctness summary by bias category:\n")
@@ -209,48 +240,25 @@ summary_stats <- plot_data %>%
   )
 print(summary_stats)
 
+base_theme <- theme_classic() +
+  theme(
+    legend.position = "none",
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 0.8),
+    axis.line = element_blank(),
+    text = element_text(family = "Avenir", color = "black"),
+    axis.title.x = element_text(family = "Avenir", size = 13.5, margin = margin(t = 12)),
+    axis.title.y = element_text(family = "Avenir", size = 13.5, margin = margin(r = 10)),
+    axis.text.x = element_text(family = "Avenir", size = 11.7, color = "black",
+                               margin = margin(t = 4)),
+    axis.text.y = element_text(family = "Avenir", size = 11.7, color = "black"),
+    axis.ticks = element_line(color = "black", linewidth = 0.6),
+    axis.ticks.length = unit(3.5, "pt"),
+    panel.grid = element_blank(),
+    plot.margin = margin(t = 10, r = 10, b = 10, l = 10))
+
 # Create probability distribution plot showing AI Correctness by bias category
-# First, let's calculate proper probability distributions manually
-
-# Create a grid of x values
-x_range <- seq(min(plot_data$AICorrectness, na.rm = TRUE), 
-               max(plot_data$AICorrectness, na.rm = TRUE), 
-               length.out = 512)
-
-# Calculate density for each group and normalize
-density_data <- plot_data %>%
-  split(.$BiasedCat) %>%
-  map_dfr(function(group_data) {
-    if(nrow(group_data) > 1) {
-      # Calculate density
-      dens <- density(group_data$AICorrectness, 
-                      from = min(x_range), 
-                      to = max(x_range),
-                      n = length(x_range))
-      
-      # Create data frame
-      data.frame(
-        x = dens$x,
-        y = dens$y,
-        BiasedCat = unique(group_data$BiasedCat)[1]
-      )
-    }
-  }) %>%
-  # Ensure factor ordering
-  mutate(BiasedCat = factor(BiasedCat, levels = c("No Bias", "Moderate Bias", "Strong Bias")))
-
-# Verify that areas integrate to approximately 1
-cat("Checking area under curves:\n")
-for(bias_cat in levels(density_data$BiasedCat)) {
-  subset_data <- density_data[density_data$BiasedCat == bias_cat, ]
-  if(nrow(subset_data) > 1) {
-    # Calculate area using trapezoidal rule
-    dx <- diff(subset_data$x)[1]
-    area <- sum(subset_data$y) * dx
-    cat(sprintf("%s: Area ≈ %.3f\n", bias_cat, area))
-  }
-}
-
+# geom_density() computes the curves itself; `divisor` rescales them to the
+# plotted y-range, so the axis is a scaled density rather than one integrating to 1.
 divisor <- nrow(plot_data) / 300
 
 p_distribution <- ggplot(plot_data, aes(x = AICorrectness, 
@@ -269,7 +277,7 @@ p_distribution <- ggplot(plot_data, aes(x = AICorrectness,
   scale_color_manual(values = ai_colors, name = "") +
   
   scale_x_continuous(
-    name = "AI Correctness",
+    name = "AI Fact-checking Correctness",
     expand = expansion(mult = c(0, 0.0)),
     labels = scales::number_format(accuracy = 0.01)
   ) +
@@ -281,46 +289,17 @@ p_distribution <- ggplot(plot_data, aes(x = AICorrectness,
   ) +
   
   # Nature journal styling
-  theme_classic() +
+  base_theme +
   theme(
-    # Panel and borders
-    panel.border = element_rect(color = "black", fill = NA, linewidth = 0.7),
-    axis.line = element_blank(),
-    
-    # Text styling - Avenir font family
-    text = element_text(family = "Avenir", color = "black"),
-    plot.title = element_text(family = "Avenir", size = 12, hjust = 0.5, 
-                              margin = margin(b = 8), face = "bold"),
-    plot.subtitle = element_text(family = "Avenir", size = 10, hjust = 0.5, 
-                                 color = "gray40", margin = margin(b = 12)),
-    
-    # Axis styling
-    axis.title.x = element_text(family = "Avenir", size = 11.5, 
-                                margin = margin(t = 8), face = "bold"),
-    axis.title.y = element_text(family = "Avenir", size = 11.5, color = "black", 
-                                margin = margin(r = 8), face = "bold"),
-    axis.text.x = element_text(family = "Avenir", size = 10.5, color = "black", 
-                               margin = margin(t = 3)),
-    axis.text.y = element_text(family = "Avenir", size = 10.5, color = "black"),
-    
-    # Axis ticks
-    axis.ticks = element_line(color = "black", linewidth = 0.6),
-    axis.ticks.length = unit(3, "pt"),
-    
-    # Background
-    panel.background = element_rect(fill = "white"),
-    plot.background = element_rect(fill = "white"),
-    panel.grid = element_blank(),
-    
-    # Legend inside plot (top-right corner)
-    legend.position = c(0.6, 0.95),
-    legend.justification = c(1, 1),
+    # Legend inside plot (upper-left corner)
+    legend.position = c(0.05, 0.9),
+    legend.justification = c(0, 1),
     legend.background = element_rect(fill = "white", color = "black", linewidth = 0.),
     legend.margin = margin(6, 6, 6, 6),
     legend.key.size = unit(0.8, "cm"),
     legend.key = element_rect(fill = "white", color = NA),
     legend.title = element_blank(),
-    legend.text = element_text(family = "Avenir", size = 11),
+    legend.text = element_text(family = "Avenir", size = 9.5),
     legend.spacing.y = unit(0.5, "cm"),
     legend.key.height = unit(0.5, "cm"),  # Controls spacing between legend items
     
@@ -328,8 +307,13 @@ p_distribution <- ggplot(plot_data, aes(x = AICorrectness,
     plot.margin = margin(t = 12, r = 12, b = 10, l = 12)
   )
 
-# Display the probability distribution plot
-print(p_distribution)
+p_distribution
+# Display and save the probability distribution plot.
+# ragg is required: Avenir is unavailable on Rscript's default PDF device.
+out_dist <- file.path("../figures", "second_figure_b2_ai_correctness_density.png")
+ragg::agg_png(out_dist, width = 5., height = 4.3, units = "in", res = 500)
+print(p_distribution); dev.off()
+cat("\nSaved:", out_dist, "\n")
 
 # =====================================
 # Perceived role visualization
@@ -338,13 +322,13 @@ print(p_distribution)
 single_ai_processed_ <- single_ai_processed_ %>%
   mutate(
     BiasCategory = case_when(
-      AIStanceLabel %in% c("Default", "Politically Neutral") ~ "No Bias",
+      AIStanceLabel %in% c("Default", "Politically Neutral") ~ "Default",
       AIStanceLabel %in% c("Somewhat Republican", "Somewhat Democrat") ~ "Moderate Bias",
       AIStanceLabel %in% c("Strong Republican", "Strong Democrat") ~ "Strong Bias",
       TRUE ~ NA_character_
     ),
-    # Order the bias categories
-    BiasCategory = factor(BiasCategory, levels = c("Strong Bias", "Moderate Bias", "No Bias"))
+    # Order the bias categories (left-to-right on the vertical plot)
+    BiasCategory = factor(BiasCategory, levels = c("Default", "Moderate Bias", "Strong Bias"))
   )
 
 # Check the distribution
@@ -353,7 +337,7 @@ table(single_ai_processed_$BiasCategory, useNA = "ifany")
 
 # Calculate counts and percentages for each combination
 role_bias_summary <- single_ai_processed_ %>%
-  filter(!is.na(BiasCategory)) %>%
+  dplyr::filter(!is.na(BiasCategory)) %>%
   group_by(BiasCategory, PerceivedAIRole) %>%
   summarise(Count = n(), .groups = 'drop') %>%
   group_by(BiasCategory) %>%
@@ -413,27 +397,32 @@ role_colors <- c(
 
 # Create vertical grouped bar chart with percentages
 perceived_role_plot <- ggplot(role_bias_summary, aes(x = BiasCategory, y = Percentage, fill = PerceivedAIRole_Clean)) +
-  geom_col(position = position_dodge(width = 0.8), alpha = 0.85, width = 0.75) +
-  geom_text(aes(label = paste0(round(Percentage, 1), "%")), 
-            position = position_dodge(width = 0.8), 
-            hjust = -0.2, size = 3, family = "Avenir") +
+  geom_col(position = position_dodge(width = 0.9), alpha = 0.85, width = 0.8) +
+  geom_text(aes(label = paste0(round(Percentage, 1), "%")),
+            position = position_dodge(width = 0.9),
+            vjust = -0.5, size = 2.9, family = "Avenir") +
   scale_fill_manual(values = role_colors, name = "Perceived AI Role") +
   scale_x_discrete(expand = expansion(add = c(0.5, 0.5))) +
-  scale_y_continuous(labels = label_percent(scale = 1), 
+  scale_y_continuous(labels = label_percent(scale = 1),
                      expand = expansion(mult = c(0, 0.15)),
                      limits = c(0, max(role_bias_summary$Percentage) * 1.1)) +
   labs(
     x = "AI Bias Magnitude",
     y = "Percentage of Participants"
   ) +
-  coord_flip() +
   nature_theme +
   theme(
-    legend.position = "bottom",
-    axis.text.y = element_text(family = "Avenir", size = 10, color = "black", angle = 90, hjust = 0.5),
+    # Legend inside the panel, upper right
+    legend.position = c(0.98, 0.99),
+    legend.justification = c(1, 1),
+    legend.background = element_rect(fill = scales::alpha("white", 0.7), color = NA),
+    legend.key = element_rect(fill = NA, color = NA),
+    legend.key.size = unit(0.35, "cm"),
+    legend.margin = margin(2, 4, 2, 4),
     axis.title.y = element_text(margin = margin(r = 15)),
     axis.title.x = element_text(margin = margin(t = 10))
   ) +
   guides(fill = guide_legend(nrow = 2, byrow = TRUE, title = ""))
 
-print(perceived_role_plot)
+if (interactive()) print(perceived_role_plot)
+ggsave("../figures/second_figure_b2.png", perceived_role_plot, width = 9.2, height = 4.3, dpi = 500)

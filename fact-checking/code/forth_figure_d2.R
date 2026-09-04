@@ -27,7 +27,7 @@ combined_data$AIInterMean_numeric <- factor(combined_data$AIInterMean_numeric, o
 # =====================================
 # FIT MODEL
 # =====================================
-model_clm <- clm(AIInterMean_numeric ~ ExperimentType + as.factor(NID) + PrePerformance +
+model_clm <- clm(PerceivedImproveCode ~ ExperimentType + as.factor(NID) + PrePerformance +
                    UStanceLabel + AICorrectness + UIdeo,
                  data = combined_data, na.action = na.omit)
 vcov_clm <- vcovCL(model_clm, cluster = combined_data$UID)
@@ -35,15 +35,20 @@ clustered_results_clm <- coeftest(model_clm, vcov = vcov_clm)
 print(clustered_results_clm)
 # summary(model_clm)
 df.residual(model_clm)
-r2(model_clm)
+performance::r2(model_clm)
 
-model_clm <- MCMCglmm(AIInterMean_numeric ~ ExperimentType + as.factor(NID) +
+model_clm <- MCMCglmm(PerceivedImproveCode ~ ExperimentType + as.factor(NID) +
                         PrePerformance + UIdeo + AICorrectness +
                         as.factor(UStanceLabel),
                             random = ~UID,
                             family = "ordinal",
                             nitt = 25000, thin = 10, burnin = 5000,
-                            data = combined_data[complete.cases(combined_data[ , "AICorrectness"]), ]
+                            # MCMCglmm hard-errors on NA in ANY fixed predictor,
+                            # not just AICorrectness; filter on the full set.
+                            data = combined_data[complete.cases(combined_data[, c(
+                              "PerceivedImproveCode", "ExperimentType", "NID",
+                              "PrePerformance", "UIdeo", "AICorrectness",
+                              "UStanceLabel", "UID")]), ]
                             )
 
 print(summary(model_clm))
@@ -150,34 +155,34 @@ for(i in 1:length(treatments)) {
 # =====================================
 
 plot_data$formal_label <- case_when(
-  plot_data$ExperimentType == "Single_AI_Non_Biased" ~ "Single AI\nNon-Biased",
+  plot_data$ExperimentType == "Single_AI_Non_Biased" ~ "Single AI\nDefault",
   plot_data$ExperimentType == "Single_AI_Biased" ~ "Single AI\nBiased",
   # plot_data$ExperimentType == "Single_AI_Non_Biased_Exp" ~ "Single AI\nNeutralized",
   # plot_data$ExperimentType == "Single_AI_Opposition" ~ "Single AI\nOpposition",
-  plot_data$ExperimentType == "Dual_AI_Non_Biased" ~ "Dual AI\nNon-Biased",
+  plot_data$ExperimentType == "Dual_AI_Non_Biased" ~ "Dual AI\nDefault",
   # plot_data$ExperimentType == "Dual_AI_Non_Biased_Exp" ~ "Dual AI\nNeutralized",
   plot_data$ExperimentType == "Dual_AI_Balanced" ~ "Dual AI\nBalanced",
   plot_data$ExperimentType == "Dual_AI_Opposition" ~ "Dual AI\nOpposition",
   TRUE ~ as.character(plot_data$ExperimentType)
 )
 
-# Order the labels (reverse for horizontal plot)
+# Order the labels left-to-right in treatment order (vertical plot)
 unique_labels <- unique(plot_data$formal_label)
-plot_data$formal_label <- factor(plot_data$formal_label, levels = rev(unique_labels))
+plot_data$formal_label <- factor(plot_data$formal_label, levels = unique_labels)
 
 # =====================================
 # VALUE-BASED COLOR MAPPING
 # =====================================
 
 # Define color palette
-color_perceived <- "#D2691E"    # Chocolate (dark orange-brown)
-color_perceived_90 <- "#FF8C00" # Dark orange
-color_perceived_95 <- "#FFA500" # Orange
-color_perceived_99 <- "#FFB347" # Peach (light but visible orange)
-# color_perceived <- "#4B0082"    # Indigo
-# color_perceived_90 <- "#9370DB" # Medium orchid
-# color_perceived_95 <- "#B88BD8" # Lavender
-# color_perceived_99 <- "#D6C0E5" # Soft lilac
+# color_perceived <- "#D2691E"    # Chocolate (dark orange-brown)
+# color_perceived_90 <- "#FF8C00" # Dark orange
+# color_perceived_95 <- "#FFA500" # Orange
+# color_perceived_99 <- "#FFB347" # Peach (light but visible orange)
+color_perceived <- "#4B0082"    # Indigo
+color_perceived_90 <- "#9370DB" # Medium orchid
+color_perceived_95 <- "#B88BD8" # Lavender
+color_perceived_99 <- "#D6C0E5" # Soft lilac
 
 # Create color gradient based on posterior mean values
 min_val <- min(plot_data$posterior_mean)
@@ -207,54 +212,53 @@ plot_data$fill_color <- sapply(plot_data$normalized_value, get_color_for_value)
 # CREATE VISUALIZATION
 # =====================================
 
-# Calculate x-axis limits
-x_min <- min(plot_data$lower_ci) * 0.95
-x_max <- max(plot_data$upper_ci) * 1.05
+# Calculate y-axis limits (value axis is vertical now)
+y_min <- min(plot_data$lower_ci) * 0.95
+y_max <- max(plot_data$upper_ci) * 1.05
 
-# Create horizontal bar plot
-p_bayesian <- ggplot(plot_data, aes(y = formal_label, x = posterior_mean)) +
+# Create vertical bar plot
+p_bayesian <- ggplot(plot_data, aes(x = formal_label, y = posterior_mean)) +
   geom_col(aes(fill = fill_color), color = "black", width = 0.7, linewidth = 0) +
-  geom_errorbar(aes(xmin = lower_ci, xmax = upper_ci), 
+  geom_errorbar(aes(ymin = lower_ci, ymax = upper_ci),
                 width = 0.3, linewidth = 0.5, color = "black") +
-  
-  # Add value labels
-  geom_text(aes(x = upper_ci + (x_max - x_min) * 0.05, 
-                label = round(posterior_mean, 3)), 
-            hjust = 0, family = "Avenir", size = 3, color = "black") +
-  
+
+  # Add value labels above each bar
+  geom_text(aes(y = upper_ci + (y_max - y_min) * 0.05,
+                label = round(posterior_mean, 3)),
+            vjust = 0, family = "Avenir", size = 3, color = "black") +
+
   # Add points
-  geom_point(aes(y = formal_label, x = posterior_mean), 
-             color = "black", size = 2, shape = 17) +
+  # geom_point(aes(x = formal_label, y = posterior_mean),
+  #            color = "black", size = 2, shape = 17) +
   
+  geom_point(color = "black", size = 2.4, shape = 17) +
+
   # Use manual fill scale
   scale_fill_identity() +
-  
-  # Set x-axis
-  scale_x_continuous(
-    expand = c(0, 0), 
+
+  # Set y-axis (values)
+  scale_y_continuous(
+    expand = c(0, 0),
     labels = scales::number_format(accuracy = 0.01)
   ) +
-  
-  coord_cartesian(xlim = c(1, 8)) +
-  
-  labs(y = "Experimental Condition", 
-       x = "Interaction Meaningfulness") +
-  
-  # geom_vline(xintercept = 0, linetype = "dotted", color = "black", linewidth = 0.5) +
+
+  coord_cartesian(ylim = c(1, 8)) +
+
+  labs(x = "Experimental Condition",
+       y = "Interaction Meaningfulness") +
+
   theme_classic() +
   theme(
     text = element_text(family = "Avenir", color = "black"),
     panel.border = element_rect(color = "black", fill = NA, linewidth = 0.5),
     axis.line = element_blank(),
-    # axis.text.y = element_text(family = "Avenir", size = 9, color = "black",
-    #                            margin = margin(r = 5)),
-    axis.text.y = element_blank(),
-    axis.text.x = element_text(family = "Avenir", size = 9, color = "black"),
-    axis.title.y = element_blank(),
-    # axis.title.y = element_text(family = "Avenir", size = 12, color = "black",
-    #                             margin = margin(r = 15)),
+    axis.text.x = element_text(family = "Avenir", size = 9, color = "black",
+                               margin = margin(t = 8)),
+    axis.text.y = element_text(family = "Avenir", size = 9, color = "black"),
     axis.title.x = element_text(family = "Avenir", size = 12, color = "black",
                                 margin = margin(t = 12)),
+    axis.title.y = element_text(family = "Avenir", size = 12, color = "black",
+                                margin = margin(r = 15)),
     axis.ticks = element_line(color = "black", linewidth = 0.4),
     axis.ticks.length = unit(3, "pt"),
     plot.background = element_rect(fill = "white", color = NA),

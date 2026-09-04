@@ -13,14 +13,14 @@ model_summary <- tidy(model, effects = "fixed")
 model_sigma <- sigma(model)
 model_df <- df.residual(model)
 summary(model)$sigma 
-r2(model)
+performance::r2(model)
 
 # Calculate Hedges' g correction factor
 J <- 1 - (3 / (4 * model_df - 1))
 
 # Extract interaction terms
 interaction_terms <- model_summary %>%
-  filter(grepl("BiasSide*PoliBias", term))
+  dplyr::filter(grepl("BiasSide*PoliBias", term))
 
 # ANOVA to test interaction significance
 interaction_test <- anova(model)

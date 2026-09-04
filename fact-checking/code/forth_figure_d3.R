@@ -444,7 +444,7 @@ model <- lmer(PostPerformance ~ PrePerformance + C(NID) + AICorrectness + UIdeo 
 summary(model)
 summary(model)$sigma
 df.residual(model)
-r2(model)
+performance::r2(model)
 
 # Step 2: Get emmeans (no need for robust SEs as clustering handled by random effects)
 emm_by_biased_polibias <- emmeans(model, ~ ExperimentType | PoliBias,
