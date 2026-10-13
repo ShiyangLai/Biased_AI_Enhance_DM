@@ -1,4 +1,4 @@
-# Biased AI Enhances Human Decision-Making But Reduces Trust
+# Biased AI Enhances Human Performance But Reduces Perceived Helpfulness
 
 Replication materials for a set of experiments on how the stance of an LLM
 assistant shapes human judgement — whether stance-diverse advice improves
