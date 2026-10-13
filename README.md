@@ -58,3 +58,7 @@ integers, and free-text responses and platform identifiers are removed. Raw
 survey exports and conversation transcripts are available from the authors. In
 the education study the session transcripts are additionally reduced to
 per-student-week message counts before release.
+
+## License
+
+This project is licensed under the MIT License; see [LICENSE](LICENSE).
